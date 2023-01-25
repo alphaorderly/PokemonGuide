@@ -8,16 +8,18 @@ export default StyleSheet.create({
   LogoView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     padding: 10,
     backgroundColor: Colors.LogoBackground,
   },
   NavIcon: {},
   NavTitle: {
     fontFamily: 'Bitbit',
-    fontSize: 32,
+    fontSize: 24,
     color: 'black',
   },
   ContentView: {
     backgroundColor: Colors.ContentBackground,
+    flex: 1,
   },
 });

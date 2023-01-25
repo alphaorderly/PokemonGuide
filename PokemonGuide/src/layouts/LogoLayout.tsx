@@ -10,34 +10,67 @@ import {DrawerNavigationProp} from '@react-navigation/drawer';
 type Prop = {
   children: React.ReactNode;
   navigation: DrawerNavigationProp<any, any>;
+  scrollable: boolean;
 };
 
 const LogoLayout = (props: Prop) => {
   const insets = useSafeAreaInsets();
 
-  return (
-    <View
-      style={{
-        ...Styles.MainView,
-        marginTop: insets.top,
-        marginBottom: insets.bottom,
-        marginLeft: insets.left,
-        marginRight: insets.right,
-      }}>
-      <View style={Styles.LogoView}>
-        <Ionicons
-          size={32}
-          name="reorder-three"
-          style={Styles.NavIcon}
-          onPress={() => {
-            props.navigation.openDrawer();
-          }}
-        />
-        <Text style={Styles.NavTitle}>POKEGUIDE</Text>
+  if (props.scrollable) {
+    return (
+      <View
+        style={{
+          ...Styles.MainView,
+          marginTop: insets.top,
+          marginBottom: insets.bottom,
+          marginLeft: insets.left,
+          marginRight: insets.right,
+        }}>
+        <View style={Styles.LogoView}>
+          <Ionicons
+            size={32}
+            name="reorder-three"
+            style={Styles.NavIcon}
+            onPress={() => {
+              props.navigation.openDrawer();
+            }}
+          />
+          <Text style={Styles.NavTitle}>
+            <Text style={{color: '#FF2400'}}>SCARLET</Text>{' '}
+            <Text style={{color: '#8F00FF'}}>VIOLET</Text> GUIDE
+          </Text>
+        </View>
+        <ScrollView style={Styles.ContentView}>{props.children}</ScrollView>
       </View>
-      <ScrollView style={Styles.ContentView}>{props.children}</ScrollView>
-    </View>
-  );
+    );
+  } else {
+    return (
+      <View
+        style={{
+          ...Styles.MainView,
+          marginTop: insets.top,
+          marginBottom: insets.bottom,
+          marginLeft: insets.left,
+          marginRight: insets.right,
+        }}>
+        <View style={Styles.LogoView}>
+          <Ionicons
+            size={32}
+            name="reorder-three"
+            style={Styles.NavIcon}
+            onPress={() => {
+              props.navigation.openDrawer();
+            }}
+          />
+          <Text style={Styles.NavTitle}>
+            <Text style={{color: '#FF2400'}}>SCARLET</Text>{' '}
+            <Text style={{color: '#8F00FF'}}>VIOLET</Text> GUIDE
+          </Text>
+        </View>
+        <View style={Styles.ContentView}>{props.children}</View>
+      </View>
+    );
+  }
 };
 
 export default LogoLayout;
