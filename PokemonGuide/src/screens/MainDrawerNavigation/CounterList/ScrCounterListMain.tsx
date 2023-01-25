@@ -15,8 +15,10 @@ type Prop = {
 };
 
 const ScrCounterListMain = (props: Prop) => {
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState([]);
+  const [victimOpen, setVictimOpen] = useState(false);
+  const [victimValue, setVictimValue] = useState([]);
+  const [hostileOpen, setHostileOpen] = useState(false);
+  const [hostileValue, setHostileValue] = useState([]);
   const [items, setItems] = useState(PokemonTypes);
 
   return (
@@ -25,13 +27,16 @@ const ScrCounterListMain = (props: Prop) => {
       <View style={Styles.VictimView}>
         <Text style={Styles.VictimText}>공격 당하는 포켓몬 타입</Text>
         <DropDownPicker
-          open={open}
-          value={value}
+          open={victimOpen}
+          value={victimValue}
           items={items}
-          setOpen={setOpen}
-          setValue={setValue}
+          setOpen={setVictimOpen}
+          setValue={value => {
+            setHostileValue([]);
+            setVictimValue(value);
+          }}
           setItems={setItems}
-          listMode={'SCROLLVIEW'}
+          listMode={'MODAL'}
           multiple={true}
           min={0}
           max={3}
@@ -44,8 +49,36 @@ const ScrCounterListMain = (props: Prop) => {
           zIndex={100}
         />
       </View>
+      <View style={Styles.VictimView}>
+        <Text style={Styles.VictimText}>공격 하는 포켓몬 타입</Text>
+        <DropDownPicker
+          open={hostileOpen}
+          value={hostileValue}
+          items={items}
+          setOpen={setHostileOpen}
+          setValue={value => {
+            setHostileValue(value);
+            setVictimValue([]);
+          }}
+          setItems={setItems}
+          listMode={'MODAL'}
+          multiple={true}
+          min={0}
+          max={1}
+          placeholder="타입을 선택해주세요"
+          mode="BADGE"
+          showBadgeDot={false}
+          badgeTextStyle={{
+            color: 'black',
+          }}
+          zIndex={100}
+        />
+      </View>
       <View>
-        <CounterAnswer types={value} />
+        <CounterAnswer
+          types={victimValue.length === 0 ? hostileValue : victimValue}
+          attacked={victimValue.length === 0 ? false : true}
+        />
       </View>
     </LogoLayout>
   );

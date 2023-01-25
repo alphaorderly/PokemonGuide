@@ -10,6 +10,7 @@ import {PokemonTypeCounters, PokemonTypes} from '../../../consts/TypeCounter';
 
 type Prop = {
   types: number[];
+  attacked: boolean;
 };
 
 const CounterAnswer = (props: Prop) => {
@@ -36,7 +37,7 @@ const CounterAnswer = (props: Prop) => {
             <Text style={{color: PokemonTypes[index].color}}>
               {PokemonTypes[index].label} 속성
             </Text>{' '}
-            에 {value} 배 피해를 받음
+            에 {value} 배 피해를 {props.attacked ? '받음' : '줌'}
           </Text>
         );
       })}
