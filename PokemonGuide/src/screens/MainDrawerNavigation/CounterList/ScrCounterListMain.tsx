@@ -19,7 +19,7 @@ const ScrCounterListMain = (props: Prop) => {
   const [victimOpen, setVictimOpen] = useState(false);
   const [victimValue, setVictimValue] = useState([]);
   const [hostileOpen, setHostileOpen] = useState(false);
-  const [hostileValue, setHostileValue] = useState([1]);
+  const [hostileValue, setHostileValue] = useState([]);
   const [items, setItems] = useState(PokemonTypes);
 
   return (
