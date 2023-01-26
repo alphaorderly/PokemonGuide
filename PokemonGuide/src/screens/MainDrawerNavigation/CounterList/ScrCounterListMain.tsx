@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
 import LogoLayout from '../../../layouts/LogoLayout';
@@ -18,7 +19,7 @@ const ScrCounterListMain = (props: Prop) => {
   const [victimOpen, setVictimOpen] = useState(false);
   const [victimValue, setVictimValue] = useState([]);
   const [hostileOpen, setHostileOpen] = useState(false);
-  const [hostileValue, setHostileValue] = useState([]);
+  const [hostileValue, setHostileValue] = useState([1]);
   const [items, setItems] = useState(PokemonTypes);
 
   return (
@@ -27,10 +28,16 @@ const ScrCounterListMain = (props: Prop) => {
       <View style={Styles.VictimView}>
         <Text style={Styles.VictimText}>공격 당하는 포켓몬 타입</Text>
         <DropDownPicker
+          style={Styles.Dropdown}
           open={victimOpen}
           value={victimValue}
           items={items}
-          setOpen={setVictimOpen}
+          setOpen={value => {
+            if (value === true) {
+              setVictimValue([]);
+            }
+            setVictimOpen(value);
+          }}
           setValue={value => {
             setHostileValue([]);
             setVictimValue(value);
@@ -43,22 +50,35 @@ const ScrCounterListMain = (props: Prop) => {
           placeholder="타입을 선택해주세요"
           mode="BADGE"
           showBadgeDot={false}
-          badgeTextStyle={{
-            color: 'black',
-          }}
           zIndex={100}
+          modalTitle={'공격을 받는 포켓몬의 타입을 입력하세요'}
+          modalAnimationType="slide"
+          modalContentContainerStyle={Styles.ModalContainer}
+          modalProps={{ transparent: true, presentationStyle: 'overFullScreen' }}
+          modalTitleStyle={Styles.ModalTitle}
+          badgeTextStyle={Styles.BadgeText}
+          listItemContainerStyle={Styles.ListContainer}
+          listItemLabelStyle={Styles.ListLabel}
         />
       </View>
-      <View style={Styles.VictimView}>
-        <Text style={Styles.VictimText}>공격 하는 포켓몬 타입</Text>
+      <View style={Styles.HostileView}>
+        <Text style={Styles.HostileText}>공격 하는 포켓몬 타입</Text>
         <DropDownPicker
+          style={Styles.Dropdown}
           open={hostileOpen}
           value={hostileValue}
           items={items}
-          setOpen={setHostileOpen}
+          setOpen={value => {
+            if (value === true) {
+              setHostileValue([]);
+            }
+            setHostileOpen(value);
+          }}
           setValue={value => {
+            setHostileValue([]);
             setHostileValue(value);
             setVictimValue([]);
+            setHostileOpen(false);
           }}
           setItems={setItems}
           listMode={'MODAL'}
@@ -68,10 +88,15 @@ const ScrCounterListMain = (props: Prop) => {
           placeholder="타입을 선택해주세요"
           mode="BADGE"
           showBadgeDot={false}
-          badgeTextStyle={{
-            color: 'black',
-          }}
           zIndex={100}
+          modalTitle={'공격을 하는 포켓몬의 타입을 입력하세요'}
+          modalAnimationType="slide"
+          modalContentContainerStyle={Styles.ModalContainer}
+          modalProps={{ transparent: true, presentationStyle: 'overFullScreen' }}
+          modalTitleStyle={Styles.ModalTitle}
+          badgeTextStyle={Styles.BadgeText}
+          listItemContainerStyle={Styles.ListContainer}
+          listItemLabelStyle={Styles.ListLabel}
         />
       </View>
       <View>

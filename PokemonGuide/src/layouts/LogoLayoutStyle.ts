@@ -14,7 +14,7 @@ export default StyleSheet.create({
   },
   NavIcon: {},
   NavTitle: {
-    fontFamily: 'Bitbit',
+    fontFamily: 'DNFBitBitTTF',
     fontSize: 24,
     color: 'black',
   },
