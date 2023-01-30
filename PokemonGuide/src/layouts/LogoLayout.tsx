@@ -8,9 +8,9 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
 
 type Prop = {
-  children: React.ReactNode;
   navigation: DrawerNavigationProp<any, any>;
-  scrollable: boolean;
+  scrollable?: boolean;
+  children?: React.ReactNode;
 };
 
 const LogoLayout = (props: Prop) => {
