@@ -11,8 +11,5 @@ export default StyleSheet.create({
     },
     DrawerStyle: {
         backgroundColor: Colors.ContentBackground
-    },
-    DrawerContentContainerStyle: {
-        
     }
 })

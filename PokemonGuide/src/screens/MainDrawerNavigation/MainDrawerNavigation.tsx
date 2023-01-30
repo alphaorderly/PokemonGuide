@@ -5,6 +5,8 @@ import ScrCounterListMain from './CounterList/ScrCounterListMain';
 import CustomDrawer from '../../components/MainDrawerNavigation/Drawer';
 
 import Styles from '../../styles/MainDrawerNavigation/MainDrawerNavigationStyle';
+import ScrPokemonListMain from './PokemonList/ScrPokemonListMain';
+import PokemonListStackNavigation from './PokemonList/PokemonListStackNavigation';
 
 const Drawer = createDrawerNavigator();
 
@@ -27,6 +29,11 @@ const MainDrawerNavigation = () => {
         name="CounterList"
         component={ScrCounterListMain}
         options={{title: '상성 리스트'}}
+      />
+      <Drawer.Screen
+        name="PokemonList"
+        component={PokemonListStackNavigation}
+        options={{title: '도감 리스트'}}
       />
     </Drawer.Navigator>
   );
