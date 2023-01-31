@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { NavigationProp } from '@react-navigation/native';
 import React, { useEffect, useRef, useState } from 'react';
 import { Switch, Text, View, Animated, TouchableOpacity, Alert } from 'react-native';
 import { PokemonListSetting } from '../../../states/PokemonList/PokemonListSetting';
@@ -7,9 +6,10 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import PokemonList from '../../../states/PokemonList/PokemonList';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Styles from '../../../styles/MainDrawerNavigation/PokemonList/ScrPokemonListSettingStyle';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 type Prop = {
-    navigation: NavigationProp<any, any>;
+    navigation: StackNavigationProp<any, any>;
 };
 
 const ScrPokemonListSetting = (props: Prop) => {
@@ -47,7 +47,7 @@ const ScrPokemonListSetting = (props: Prop) => {
             <Animated.View style={{...Styles.InnerView, transform: [{translateY: animation}]}}>
                 <View style={Styles.TopView}>
                     <Text style={Styles.TopText}>설정</Text>
-                    <View style={Styles.TopCloseView} onTouchStart={() => {props.navigation.navigate('Main');}}>
+                    <View style={Styles.TopCloseView} onTouchStart={() => {props.navigation.pop();}}>
                         <Text style={Styles.TopClose}>적용하기</Text>
                     </View>
                 </View>

@@ -20,7 +20,6 @@ const ScrCounterListMain = (props: Prop) => {
   const [victimValue, setVictimValue] = useState([]);
   const [hostileOpen, setHostileOpen] = useState(false);
   const [hostileValue, setHostileValue] = useState([]);
-  const [items, setItems] = useState(PokemonTypes);
 
   return (
     <LogoLayout navigation={props.navigation} scrollable={false}>
@@ -31,7 +30,7 @@ const ScrCounterListMain = (props: Prop) => {
           style={Styles.Dropdown}
           open={victimOpen}
           value={victimValue}
-          items={items}
+          items={PokemonTypes}
           setOpen={value => {
             if (value === true) {
               setVictimValue([]);
@@ -42,7 +41,6 @@ const ScrCounterListMain = (props: Prop) => {
             setHostileValue([]);
             setVictimValue(value);
           }}
-          setItems={setItems}
           listMode={'MODAL'}
           multiple={true}
           min={0}
@@ -67,7 +65,7 @@ const ScrCounterListMain = (props: Prop) => {
           style={Styles.Dropdown}
           open={hostileOpen}
           value={hostileValue}
-          items={items}
+          items={PokemonTypes}
           setOpen={value => {
             if (value === true) {
               setHostileValue([]);
@@ -80,7 +78,6 @@ const ScrCounterListMain = (props: Prop) => {
             setVictimValue([]);
             setHostileOpen(false);
           }}
-          setItems={setItems}
           listMode={'MODAL'}
           multiple={true}
           min={0}

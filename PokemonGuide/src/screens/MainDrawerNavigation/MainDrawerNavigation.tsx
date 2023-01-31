@@ -5,8 +5,8 @@ import ScrCounterListMain from './CounterList/ScrCounterListMain';
 import CustomDrawer from '../../components/MainDrawerNavigation/Drawer';
 
 import Styles from '../../styles/MainDrawerNavigation/MainDrawerNavigationStyle';
-import ScrPokemonListMain from './PokemonList/ScrPokemonListMain';
 import PokemonListStackNavigation from './PokemonList/PokemonListStackNavigation';
+import OpponentTrainerStackNavigation from './OpponentTrainer/OpponentTrainerStackNavigation';
 
 const Drawer = createDrawerNavigator();
 
@@ -23,7 +23,6 @@ const MainDrawerNavigation = () => {
         drawerInactiveTintColor: '#EDEDE9',
         drawerStyle: Styles.DrawerStyle,
         drawerLabelStyle: Styles.DrawerLabelStyle,
-        drawerContentContainerStyle: Styles.DrawerContentContainerStyle,
       }}>
       <Drawer.Screen
         name="CounterList"
@@ -34,6 +33,11 @@ const MainDrawerNavigation = () => {
         name="PokemonList"
         component={PokemonListStackNavigation}
         options={{title: '도감 리스트'}}
+      />
+      <Drawer.Screen
+        name="OpponentTrainer"
+        component={OpponentTrainerStackNavigation}
+        options={{title: '주요 상대'}}
       />
     </Drawer.Navigator>
   );
