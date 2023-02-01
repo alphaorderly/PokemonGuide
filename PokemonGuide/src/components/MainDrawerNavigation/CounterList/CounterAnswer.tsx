@@ -16,9 +16,11 @@ type Prop = {
 const CounterAnswer = (props: Prop) => {
   let ans = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
-  if(props.types.length === 0) {return;}
+  console.log(props.types)
 
-  if(props.attacked === true) {
+  if (props.types.length === 0) {return;}
+
+  if (props.attacked === true) {
     for (var i = 0; i < props.types.length; i++) {
       for (var j = 0; j < 18; j++) {
         ans[j] *= PokemonTypeCounters[props.types[i]][j];
