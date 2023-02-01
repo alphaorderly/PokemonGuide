@@ -16,10 +16,10 @@ type Prop = {
 };
 
 const ScrCounterListMain = (props: Prop) => {
-  const [victimOpen, setVictimOpen] = useState(false);
-  const [victimValue, setVictimValue] = useState([]);
-  const [hostileOpen, setHostileOpen] = useState(false);
-  const [hostileValue, setHostileValue] = useState([]);
+  const [victimOpen, setVictimOpen] = useState<boolean>(false);
+  const [victimValue, setVictimValue] = useState<number[]>([]);
+  const [hostileOpen, setHostileOpen] = useState<boolean>(false);
+  const [hostileValue, setHostileValue] = useState<number[]>([]);
 
   return (
     <LogoLayout navigation={props.navigation} scrollable={false}>
@@ -27,6 +27,9 @@ const ScrCounterListMain = (props: Prop) => {
       <View style={Styles.VictimView}>
         <Text style={Styles.VictimText}>공격 당하는 포켓몬 타입</Text>
         <DropDownPicker
+          schema={{
+            icon: 'pickerIcon',
+          }}
           style={Styles.Dropdown}
           open={victimOpen}
           value={victimValue}
@@ -62,11 +65,14 @@ const ScrCounterListMain = (props: Prop) => {
       <View style={Styles.HostileView}>
         <Text style={Styles.HostileText}>공격 하는 포켓몬 타입</Text>
         <DropDownPicker
+          schema={{
+            icon: 'pickerIcon',
+          }}
           style={Styles.Dropdown}
           open={hostileOpen}
           value={hostileValue}
           items={PokemonTypes}
-          setOpen={value => {
+          setOpen={(value) => {
             if (value === true) {
               setHostileValue([]);
             }

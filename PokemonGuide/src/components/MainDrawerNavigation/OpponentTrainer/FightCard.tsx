@@ -41,7 +41,7 @@ const FightCard = (props: Prop) => {
                                         item.skill.map(
                                             (skill) => {
                                                 return (
-                                                    <View key={skill.name} style={Styles.SkillView}>
+                                                    <View key={skill.name + pokemon.name} style={Styles.SkillView}>
                                                         <Text style={Styles.SkillText}>{skill.name}</Text>
                                                         <View style={Styles.SkillTypeView}>
                                                             <Image style={Styles.SkillTypeIcon} source={PokemonTypes[skill.type].icon} />

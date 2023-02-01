@@ -1,6 +1,8 @@
 import { PokemonMode, PokemonType } from './TypeCounter';
 
-export const ChampionList = ['세르클 체육관', '보울 체육관', '누룩스 체육관', '카라프 체육관', '참푸르 체육관', '프리지 체육관'];
+export const ChampionList = ['세르클 체육관', '보울 체육관', '누룩스 체육관', '카라프 체육관', '참푸르 체육관', '프리지 체육관', '베이크 체육관', '나페산 체육관'];
+
+export const StardustList = ['팀 세긴 기지']
 
 export type FightType = {
     level: [number, number],
@@ -1303,4 +1305,550 @@ export const Trainers: TrainerType = {
             },
         ],
     },
+    '베이크 체육관': {
+        name: '리파',
+        background: require('../../assets/images/gymImages/bake_background.png'),
+        icon: require('../../assets/images/gymImages/bake.png'),
+        type: [PokemonType.에스퍼],
+        fight: [
+            {
+                level: [44, 45],
+                title: '1차전',
+                pokemon: [
+                    {
+                        level: 44,
+                        number: 193,
+                        skill: [
+                            {
+                                name: '깨물어부수기',
+                                type: PokemonType.악,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '사념의박치기',
+                                type: PokemonType.에스퍼,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '리플렉터',
+                                type: PokemonType.에스퍼,
+                                mode: PokemonMode.변화,
+                            },
+                        ],
+                    },
+                    {
+                        level: 44,
+                        number: 64,
+                        skill: [
+                            {
+                                name: '사이코키네시스',
+                                type: PokemonType.에스퍼,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '매지컬샤인',
+                                type: PokemonType.페어리,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '에너지볼',
+                                type: PokemonType.풀,
+                                mode: PokemonMode.특수,
+                            },
+                        ],
+                    },
+                    {
+                        level: 44,
+                        number: 264,
+                        skill: [
+                            {
+                                name: '사이코키네시스',
+                                type: PokemonType.에스퍼,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '전광석화',
+                                type: PokemonType.노말,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '섀도볼',
+                                type: PokemonType.고스트,
+                                mode: PokemonMode.특수,
+                            },
+                        ],
+                    },
+                    {
+                        level: 45,
+                        number: 147,
+                        skill: [
+                            {
+                                name: '사이코키네시스',
+                                type: PokemonType.에스퍼,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '문포스',
+                                type: PokemonType.페어리,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '꽃보라',
+                                type: PokemonType.풀,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                level: [65, 66],
+                title: '2차전',
+                pokemon: [
+                    {
+                        level: 65,
+                        number: 193,
+                        skill: [
+                            {
+                                name: '깨물어부수기',
+                                type: PokemonType.악,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '사념의박치기',
+                                type: PokemonType.에스퍼,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '리플렉터',
+                                type: PokemonType.에스퍼,
+                                mode: PokemonMode.변화,
+                            },
+                            {
+                                name: '아이언헤드',
+                                type: PokemonType.강철,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                    {
+                        level: 65,
+                        number: 64,
+                        skill: [
+                            {
+                                name: '사이코키네시스',
+                                type: PokemonType.에스퍼,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '매지컬샤인',
+                                type: PokemonType.페어리,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '에너지볼',
+                                type: PokemonType.풀,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '매지컬플레임',
+                                type: PokemonType.불꽃,
+                                mode: PokemonMode.특수,
+                            },
+                        ],
+                    },
+                    {
+                        level: 65,
+                        number: 264,
+                        skill: [
+                            {
+                                name: '사이코키네시스',
+                                type: PokemonType.에스퍼,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '전광석화',
+                                type: PokemonType.노말,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '섀도볼',
+                                type: PokemonType.고스트,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '매지컬샤인',
+                                type: PokemonType.페어리,
+                                mode: PokemonMode.특수,
+                            },
+                        ],
+                    },
+                    {
+                        level: 65,
+                        number: 65,
+                        skill: [
+                            {
+                                name: '사이코커터',
+                                type: PokemonType.에스퍼,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '리프블레이드',
+                                type: PokemonType.풀,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '시저크로스',
+                                type: PokemonType.벌레,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '인파이트',
+                                type: PokemonType.격투,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                    {
+                        level: 66,
+                        number: 147,
+                        skill: [
+                            {
+                                name: '사이코키네시스',
+                                type: PokemonType.에스퍼,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '문포스',
+                                type: PokemonType.페어리,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '꽃보라',
+                                type: PokemonType.풀,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '애교부리기',
+                                type: PokemonType.페어리,
+                                mode: PokemonMode.변화,
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    '나페산 체육관': {
+        name: '그루샤',
+        background: require('../../assets/images/gymImages/narphesan_background.png'),
+        icon: require('../../assets/images/gymImages/narphesan.png'),
+        type: [PokemonType.얼음],
+        fight: [
+            {
+                level: [47, 48],
+                title: '1차전',
+                pokemon: [
+                    {
+                        level: 47,
+                        number: 351,
+                        skill: [
+                            {
+                                name: '눈보라',
+                                type: PokemonType.얼음,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '벌레의야단법석',
+                                type: PokemonType.벌레,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '순풍',
+                                type: PokemonType.비행,
+                                mode: PokemonMode.변화,
+                            },
+                        ],
+                    },
+                    {
+                        level: 47,
+                        number: 356,
+                        skill: [
+                            {
+                                name: '아쿠아제트',
+                                type: PokemonType.물,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '고드름떨구기',
+                                type: PokemonType.얼음,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '지진',
+                                type: PokemonType.땅,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                    {
+                        level: 47,
+                        number: 362,
+                        skill: [
+                            {
+                                name: '아이스스피너',
+                                type: PokemonType.얼음,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '아쿠아브레이크',
+                                type: PokemonType.노말,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '얼음뭉치',
+                                type: PokemonType.고스트,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                    {
+                        level: 48,
+                        number: 220,
+                        skill: [
+                            {
+                                name: '냉동빔',
+                                type: PokemonType.얼음,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '용의파동',
+                                type: PokemonType.드래곤,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '문포스',
+                                type: PokemonType.페어리,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '폭풍',
+                                type: PokemonType.비행,
+                                mode: PokemonMode.특수,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                level: [65, 66],
+                title: '2차전',
+                pokemon: [
+                    {
+                        level: 65,
+                        number: 351,
+                        skill: [
+                            {
+                                name: '눈보라',
+                                type: PokemonType.얼음,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '벌레의야단법석',
+                                type: PokemonType.벌레,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '순풍',
+                                type: PokemonType.비행,
+                                mode: PokemonMode.변화,
+                            },
+                        ],
+                    },
+                    {
+                        level: 65,
+                        number: 356,
+                        skill: [
+                            {
+                                name: '아쿠아제트',
+                                type: PokemonType.물,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '고드름떨구기',
+                                type: PokemonType.얼음,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '지진',
+                                type: PokemonType.땅,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                    {
+                        level: 65,
+                        number: 362,
+                        skill: [
+                            {
+                                name: '아이스스피너',
+                                type: PokemonType.얼음,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '아쿠아브레이크',
+                                type: PokemonType.물,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '얼음뭉치',
+                                type: PokemonType.얼음,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '뛰어오르기',
+                                type: PokemonType.비행,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                    {
+                        level: 65,
+                        number: 231,
+                        skill: [
+                            {
+                                name: '깜짝베기',
+                                type: PokemonType.악,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '냉동펀치',
+                                type: PokemonType.얼음,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '섀도클로',
+                                type: PokemonType.고스트,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '시저크로스',
+                                type: PokemonType.벌레,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                    {
+                        level: 66,
+                        number: 220,
+                        skill: [
+                            {
+                                name: '냉동빔',
+                                type: PokemonType.얼음,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '용의파동',
+                                type: PokemonType.드래곤,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '문포스',
+                                type: PokemonType.페어리,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '폭풍',
+                                type: PokemonType.비행,
+                                mode: PokemonMode.특수,
+                            }
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    '팀 세긴 기지': {
+        name: '피나',
+        background: require('../../assets/images/blank.png'),
+        icon: require('../../assets/images/stardustImages/segin.png'),
+        type: [PokemonType.악],
+        fight: [
+            {
+                level: [20, 21],
+                title: '1차전',
+                pokemon: [
+                    {
+                        level: 21,
+                        number: 367,
+                        skill: [
+                            {
+                                name: '메탈클로',
+                                type: PokemonType.강철,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '연속자르기',
+                                type: PokemonType.벌레,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '제비반환',
+                                type: PokemonType.비행,
+                                mode: PokemonMode.물리,
+                            }
+                        ]
+                    },
+                    {
+                        level: 20,
+                        number: 294,
+                        skill: [
+                            {
+                                name: '다크액셀',
+                                type: PokemonType.악,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '바크아웃',
+                                type: PokemonType.악,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '금속음',
+                                type: PokemonType.강철,
+                                mode: PokemonMode.변화
+                            },
+                            {
+                                name: '스피드스타',
+                                type: PokemonType.강철,
+                                mode: PokemonMode.변화,
+                            },
+                        ]
+                    },
+                ]
+            },
+            {
+                level: [65, 66],
+                title: '2차전',
+                pokemon: [
+                    {
+                        level: 65,
+                        number: 253,
+                        skill: [
+                            {
+                                name: '씨기관총',
+                                type: PokemonType.풀,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '기습',
+                                type: PokemonType.악,
+                                mode: PokemonMode.물리,
+                            },
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
 };

@@ -36,8 +36,8 @@ const ScrOpponentTrainerDetail = (props: Prop) => {
                 </ImageBackground>
                 {
                     trainer.fight.map(
-                        (item) => {
-                            return <FightCard fight={item}/>;
+                        (item, index) => {
+                            return <FightCard fight={item} key={index}/>;
                         }
                     )
                 }
