@@ -7,6 +7,7 @@ import BackLayout from '../../../layouts/BackLayout';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RouteProp } from '@react-navigation/native';
 import { Trainers } from '../../../consts/OpponentTrainers';
+import FightCard from '../../../components/MainDrawerNavigation/OpponentTrainer/FightCard';
 
 type Prop = {
     navigation: StackNavigationProp<any, any>
@@ -33,6 +34,13 @@ const ScrOpponentTrainerDetail = (props: Prop) => {
                         </View>
                     </View>
                 </ImageBackground>
+                {
+                    trainer.fight.map(
+                        (item) => {
+                            return <FightCard fight={item}/>;
+                        }
+                    )
+                }
             </View>
         </BackLayout>
     )
