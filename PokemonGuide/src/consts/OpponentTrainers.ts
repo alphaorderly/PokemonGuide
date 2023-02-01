@@ -2,7 +2,7 @@ import { PokemonMode, PokemonType } from './TypeCounter';
 
 export const ChampionList = ['세르클 체육관', '보울 체육관', '누룩스 체육관', '카라프 체육관', '참푸르 체육관', '프리지 체육관', '베이크 체육관', '나페산 체육관'];
 
-export const StardustList = ['팀 세긴 기지']
+export const StardustList = ['팀 세긴 기지', '팀 쉐다르 기지'];
 
 export type FightType = {
     level: [number, number],
@@ -1761,7 +1761,7 @@ export const Trainers: TrainerType = {
                                 name: '폭풍',
                                 type: PokemonType.비행,
                                 mode: PokemonMode.특수,
-                            }
+                            },
                         ],
                     },
                 ],
@@ -1796,8 +1796,8 @@ export const Trainers: TrainerType = {
                                 name: '제비반환',
                                 type: PokemonType.비행,
                                 mode: PokemonMode.물리,
-                            }
-                        ]
+                            },
+                        ],
                     },
                     {
                         level: 20,
@@ -1816,16 +1816,16 @@ export const Trainers: TrainerType = {
                             {
                                 name: '금속음',
                                 type: PokemonType.강철,
-                                mode: PokemonMode.변화
+                                mode: PokemonMode.변화,
                             },
                             {
                                 name: '스피드스타',
                                 type: PokemonType.강철,
                                 mode: PokemonMode.변화,
                             },
-                        ]
+                        ],
                     },
-                ]
+                ],
             },
             {
                 level: [65, 66],
@@ -1845,10 +1845,316 @@ export const Trainers: TrainerType = {
                                 type: PokemonType.악,
                                 mode: PokemonMode.물리,
                             },
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
+                            {
+                                name: '니들카드',
+                                type: PokemonType.풀,
+                                mode: PokemonMode.변화,
+                            },
+                            {
+                                name: '번개펀치',
+                                type: PokemonType.전기,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                    {
+                        level: 65,
+                        number: 233,
+                        skill: [
+                            {
+                                name: '폭풍',
+                                type: PokemonType.비행,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '악의파동',
+                                type: PokemonType.악,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '사이코키네시스',
+                                type: PokemonType.에스퍼,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '순풍',
+                                type: PokemonType.비행,
+                                mode: PokemonMode.변화,
+                            },
+                        ],
+                    },
+                    {
+                        level: 65,
+                        number: 197,
+                        skill: [
+                            {
+                                name: '치근거리기',
+                                type: PokemonType.페어리,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '깨물어부수기',
+                                type: PokemonType.악,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '보복',
+                                type: PokemonType.악,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '얼음엄니',
+                                type: PokemonType.얼음,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                    {
+                        level: 65,
+                        number: 269,
+                        skill: [
+                            {
+                                name: '지진',
+                                type: PokemonType.땅,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '깨물어부수기',
+                                type: PokemonType.악,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '드래곤클로',
+                                type: PokemonType.드래곤,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '불꽃엄니',
+                                type: PokemonType.불꽃,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                    {
+                        level: 66,
+                        number: 369,
+                        skill: [
+                            {
+                                name: '도각참',
+                                type: PokemonType.악,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '아이언헤드',
+                                type: PokemonType.강철,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '칼춤',
+                                type: PokemonType.노말,
+                                mode: PokemonMode.변화,
+                            },
+                            {
+                                name: '스톤에지',
+                                type: PokemonType.바위,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    '팀 쉐다르 기지': {
+        name: '멜로코',
+        icon: require('../../assets/images/stardustImages/shedar.png'),
+        background: require('../../assets/images/blank.png'),
+        type: [PokemonType.불꽃],
+        fight: [
+            {
+                level: [26, 27],
+                title: '1차전',
+                pokemon: [
+                    {
+                        level: 27,
+                        number: 150,
+                        skill: [
+                            {
+                                name: '화염바퀴',
+                                type: PokemonType.불꽃,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '클리어스모그',
+                                type: PokemonType.독,
+                                mode: PokemonMode.특수,
+                            },
+                        ],
+                    },
+                    {
+                        level: 26,
+                        number: 294,
+                        skill: [
+                            {
+                                name: '오버히트',
+                                type: PokemonType.불꽃,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '번액셀',
+                                type: PokemonType.불꽃,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '싫은소리',
+                                type: PokemonType.노말,
+                                mode: PokemonMode.변화,
+                            },
+                            {
+                                name: '스피드스타',
+                                type: PokemonType.노말,
+                                mode: PokemonMode.특수,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                level: [65, 66],
+                title: '2차전',
+                pokemon: [
+                    {
+                        level: 65,
+                        number: 150,
+                        skill: [
+                            {
+                                name: '바디프레스',
+                                type: PokemonType.격투,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '하품',
+                                type: PokemonType.노말,
+                                mode: PokemonMode.변화,
+                            },
+                            {
+                                name: '플레어드라이브',
+                                type: PokemonType.불꽃,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '스톤에지',
+                                type: PokemonType.바위,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                    {
+                        level: 65,
+                        number: 93,
+                        skill: [
+                            {
+                                name: '히트스탬프',
+                                type: PokemonType.불꽃,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '록블라스트',
+                                type: PokemonType.바위,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '바디프레스',
+                                type: PokemonType.격투,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '지진',
+                                type: PokemonType.땅,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                    {
+                        level: 65,
+                        number: 26,
+                        skill: [
+                            {
+                                name: '불대문자',
+                                type: PokemonType.불꽃,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '악의파동',
+                                type: PokemonType.악,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '오물폭탄',
+                                type: PokemonType.독,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '번개엄니',
+                                type: PokemonType.전기,
+                                mode: PokemonMode.물리,
+                            },
+                        ],
+                    },
+                    {
+                        level: 65,
+                        number: 214,
+                        skill: [
+                            {
+                                name: '플레어드라이브',
+                                type: PokemonType.불꽃,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '신속',
+                                type: PokemonType.노말,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '인파이트',
+                                type: PokemonType.격투,
+                                mode: PokemonMode.물리,
+                            },
+                            {
+                                name: '오버히트',
+                                type: PokemonType.불꽃,
+                                mode: PokemonMode.특수,
+                            },
+                        ],
+                    },
+                    {
+                        level: 66,
+                        number: 166,
+                        skill: [
+                            {
+                                name: '파동탄',
+                                type: PokemonType.격투,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '아머캐논',
+                                type: PokemonType.불꽃,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '에너지볼',
+                                type: PokemonType.풀,
+                                mode: PokemonMode.특수,
+                            },
+                            {
+                                name: '사이코키네시스',
+                                type: PokemonType.에스퍼,
+                                mode: PokemonMode.특수,
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
 };
