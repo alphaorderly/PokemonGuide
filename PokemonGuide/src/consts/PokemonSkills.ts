@@ -493,7 +493,7 @@ export const PokemonSkill: SkillList = {
     },
     브레이브버드: {
         name: '브레이브버드',
-        type: PokemonType.노말,
+        type: PokemonType.비행,
         mode: PokemonMode.물리,
     },
     브레이브클로: {
@@ -598,7 +598,7 @@ export const PokemonSkill: SkillList = {
     },
     아쿠아브레이크: {
         name: '아쿠아브레이크',
-        type: PokemonType.노말,
+        type: PokemonType.물,
         mode: PokemonMode.물리,
     },
     얼음뭉치: {
@@ -890,6 +890,107 @@ export const PokemonSkill: SkillList = {
         name: '미래예지',
         type: PokemonType.에스퍼,
         mode: PokemonMode.특수,
+    },
+    모래바람: {
+        name: '모래바람',
+        type: PokemonType.바위,
+        mode: PokemonMode.변화
+    },
+    헤비봄버: {
+        name: '헤비봄버',
+        type: PokemonType.강철,
+        mode: PokemonMode.물리,
+    },
+    스텔스록: {
+        name: '스텔스록',
+        type: PokemonType.바위,
+        mode: PokemonMode.변화,
+    },
+    트라이어택: {
+        name: '트라이어택',
+        type: PokemonType.노말,
+        mode: PokemonMode.특수,
+    },
+    철벽: {
+        name: '철벽',
+        type: PokemonType.강철,
+        mode: PokemonMode.변화
+    },
+    거대해머: {
+        name: '거대해머',
+        type: PokemonType.강철,
+        mode: PokemonMode.물리
+    },
+    에어슬래시: {
+        name: '에어슬래시',
+        type: PokemonType.비행,
+        mode: PokemonMode.특수,
+    },
+    쾌청: {
+        name: '쾌청',
+        type: PokemonType.불꽃,
+        mode: PokemonMode.변화,
+    },
+    솔라빔: {
+        name: '솔라빔',
+        type: PokemonType.풀,
+        mode: PokemonMode.특수
+    },
+    잠재댄스: {
+        name: '잠재댄스',
+        type: PokemonType.전기,
+        mode: PokemonMode.특수,
+    },
+    흔들흔들댄스: {
+        name: '흔들흔들댄스',
+        type: PokemonType.노말,
+        mode: PokemonMode.변화,
+    },
+    폭음파: {
+        name: '폭음파',
+        type: PokemonType.노말,
+        mode: PokemonMode.특수,
+    },
+    분노의앞니: {
+        name: '분노의앞니',
+        type: PokemonType.노말,
+        mode: PokemonMode.물리,
+    },
+    '10만볼트': {
+        name: '10만볼트',
+        type: PokemonType.전기,
+        mode: PokemonMode.특수,
+    },
+    대검돌격: {
+        name: '대검돌격',
+        type: PokemonType.드래곤,
+        mode: PokemonMode.물리,
+    },
+    루미나콜리전: {
+        name: '루미나콜리전',
+        type: PokemonType.에스퍼,
+        mode: PokemonMode.특수,
+    },
+    우드혼: {
+        name: '우드혼',
+        type: PokemonType.풀,
+        mode: PokemonMode.물리,
+    },
+    벌크업: {
+        name: '벌크업',
+        type: PokemonType.격투,
+        mode: PokemonMode.변화
+    },
+    눈사태: {
+        name: '눈사태',
+        type: PokemonType.얼음,
+        mode: PokemonMode.물리,
+    },
+    테라버스트: {
+        name: '테라버스트',
+        type: PokemonType.바위,
+        mode: PokemonMode.특수,
     }
+
 
 }

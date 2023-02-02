@@ -5,7 +5,7 @@ export const ChampionList = ['세르클 체육관', '보울 체육관', '누룩�
 
 export const StardustList = ['팀 세긴 기지', '팀 쉐다르 기지', '팀 시 기지', '팀 루크바 기지', '팀 카프 기지'];
 
-export const LeagueList = ['첫번째 사천왕'];
+export const LeagueList = ['첫번째 사천왕', '두번째 사천왕', '세번째 사천왕', '네번째 사천왕', '포켓몬 챔피언'];
 
 export type FightType = {
     level: [number, number],
@@ -1350,18 +1350,337 @@ export const Trainers: TrainerType = {
         fight: [
             {
                 level: [57, 58],
-                title: '첫번째 사천왕',
+                title: '',
                 pokemon: [
                     {
                         level: 57,
                         number: 169,
                         skill: [
-                            
+                            PokemonSkill['탁류'],
+                            PokemonSkill['대지의힘'],
+                            PokemonSkill['눈보라'],
+                            PokemonSkill['미래예지'],
+                        ],
+                    },
+                    {
+                        level: 57,
+                        number: 152,
+                        skill:[
+                            PokemonSkill['대지의힘'],
+                            PokemonSkill['불대문자'],
+                            PokemonSkill['러스터캐논'],
+                            PokemonSkill['하품'],
+                        ],
+                    },
+                    {
+                        level: 57,
+                        number: 123,
+                        skill: [
+                            PokemonSkill['지진'],
+                            PokemonSkill['스톤에지'],
+                            PokemonSkill['아이언헤드'],
+                            PokemonSkill['독찌르기'],
+                        ],
+                    },
+                    {
+                        level: 57,
+                        number: 149,
+                        skill: [
+                            PokemonSkill['지진'],
+                            PokemonSkill['스톤샤워'],
+                            PokemonSkill['기습'],
+                            PokemonSkill['모래바람'],
+                        ],
+                    },
+                    {
+                        level: 58,
+                        number: 54,
+                        skill: [
+                            PokemonSkill['지진'],
+                            PokemonSkill['아쿠아브레이크'],
+                            PokemonSkill['맹독'],
+                            PokemonSkill['방어'],
                         ],
                     },
                 ],
             },
 
+        ],
+    },
+    '두번째 사천왕': {
+        name: '뽀삐',
+        background: require('../../assets/images/blank.png'),
+        icon: require('../../assets/images/leagueImage/icon.png'),
+        type: [PokemonType.강철],
+        fight: [
+            {
+                level: [57, 59],
+                title: '',
+                pokemon: [
+                    {
+                        level: 58,
+                        number: 125,
+                        skill: [
+                            PokemonSkill['10만마력'],
+                            PokemonSkill['치근거리기'],
+                            PokemonSkill['헤비봄버'],
+                            PokemonSkill['스텔스록'],
+                        ],
+                    },
+                    {
+                        level: 57,
+                        number: 211,
+                        skill: [
+                            PokemonSkill['방전'],
+                            PokemonSkill['러스터캐논'],
+                            PokemonSkill['빛의장막'],
+                            PokemonSkill['트라이어택'],
+                        ],
+                    },
+                    {
+                        level: 58,
+                        number: 154,
+                        skill: [
+                            PokemonSkill['아이언헤드'],
+                            PokemonSkill['사념의박치기'],
+                            PokemonSkill['록블라스트'],
+                            PokemonSkill['지진'],
+                        ],
+                    },
+                    {
+                        level: 58,
+                        number: 42,
+                        skill: [
+                            PokemonSkill['브레이브버드'],
+                            PokemonSkill['아이언헤드'],
+                            PokemonSkill['바디프레스'],
+                            PokemonSkill['철벽'],
+                        ],
+                    },
+                    {
+                        level: 59,
+                        number: 281,
+                        skill: [
+                            PokemonSkill['치근거리기'],
+                            PokemonSkill['거대해머'],
+                            PokemonSkill['깨트리기'],
+                            PokemonSkill['스톤에지'],
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    '세번째 사천왕': {
+        name: '청목',
+        background: require('../../assets/images/blank.png'),
+        icon: require('../../assets/images/leagueImage/icon.png'),
+        type: [PokemonType.비행],
+        fight: [
+            {
+                level: [59, 60],
+                title: '',
+                pokemon: [
+                    {
+                        level: 59,
+                        number: 246,
+                        skill: [
+                            PokemonSkill['에어슬래시'],
+                            PokemonSkill['솔라빔'],
+                            PokemonSkill['용의파동'],
+                            PokemonSkill['쾌청'],
+                        ],
+                    },
+                    {
+                        level: 59,
+                        number: 100,
+                        skill: [
+                            PokemonSkill['잠재댄스'],
+                            PokemonSkill['에어슬래시'],
+                            PokemonSkill['흔들흔들댄스'],
+                            PokemonSkill['얼어붙은바람'],
+                        ],
+                    },
+                    {
+                        level: 59,
+                        number: 220,
+                        skill: [
+                            PokemonSkill['문포스'],
+                            PokemonSkill['화염방사'],
+                            PokemonSkill['냉동빔'],
+                            PokemonSkill['용의파동'],
+                        ],
+                    },
+                    {
+                        level: 59,
+                        number: 99,
+                        skill: [
+                            PokemonSkill['객기'],
+                            PokemonSkill['브레이브버드'],
+                            PokemonSkill['인파이트'],
+                            PokemonSkill['도둑질'],
+                        ],
+                    },
+                    {
+                        level: 60,
+                        number: 346,
+                        skill: [
+                            PokemonSkill['브레이브버드'],
+                            PokemonSkill['인파이트'],
+                            PokemonSkill['지옥찌르기'],
+                            PokemonSkill['아쿠아브레이크'],
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    '네번째 사천왕': {
+        name: '팔자크',
+        background: require('../../assets/images/blank.png'),
+        icon: require('../../assets/images/leagueImage/icon.png'),
+        type: [PokemonType.드래곤],
+        fight: [
+            {
+                level: [67, 68],
+                title: '',
+                pokemon: [
+                    {
+                        level: 67,
+                        number: 304,
+                        skill: [
+                            PokemonSkill['에어슬래시'],
+                            PokemonSkill['용의파동'],
+                            PokemonSkill['분노의앞니'],
+                            PokemonSkill['폭음파'],
+                        ],
+                    },
+                    {
+                        level: 67,
+                        number: 157,
+                        skill: [
+                            PokemonSkill['드래곤클로'],
+                            PokemonSkill['깨물어부수기'],
+                            PokemonSkill['아이언헤드'],
+                            PokemonSkill['암석봉인'],
+                        ],
+                    },
+                    {
+                        level: 67,
+                        number: 338,
+                        skill: [
+                            PokemonSkill['오물폭탄'],
+                            PokemonSkill['용의파동'],
+                            PokemonSkill['하이드로펌프'],
+                            PokemonSkill['10만볼트'],
+                        ],
+                    },
+                    {
+                        level: 67,
+                        number: 109,
+                        skill: [
+                            PokemonSkill['드래곤다이브'],
+                            PokemonSkill['씨폭탄'],
+                            PokemonSkill['제비반환'],
+                            PokemonSkill['씨뿌리기'],
+                        ],
+                    },
+                    {
+                        level: 67,
+                        number: 349,
+                        skill: [
+                            PokemonSkill['신속'],
+                            PokemonSkill['드래곤다이브'],
+                            PokemonSkill['불꽃펀치'],
+                            PokemonSkill['스톤에지'],
+                        ],
+                    },
+                    {
+                        level: 68,
+                        number: 390,
+                        skill: [
+                            PokemonSkill['고드름떨구기'],
+                            PokemonSkill['깨트리기'],
+                            PokemonSkill['대검돌격'],
+                            PokemonSkill['얼음뭉치'],
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    '포켓몬 챔피언': {
+        name: '테사',
+        background: require('../../assets/images/blank.png'),
+        icon: require('../../assets/images/leagueImage/icon.png'),
+        type: [],
+        fight: [
+            {
+                level: [61, 62],
+                title: '챔피언',
+                pokemon: [
+                    {
+                        level: 61,
+                        number: 264,
+                        skill: [
+                            PokemonSkill['루미나콜리전'],
+                            PokemonSkill['매지컬샤인'],
+                            PokemonSkill['전광석화'],
+                            PokemonSkill['리플렉터']
+                        ]
+                    },
+                    {
+                        level: 61,
+                        number: 222,
+                        skill: [
+                            PokemonSkill['우드혼'],
+                            PokemonSkill['사념의박치기'],
+                            PokemonSkill['치근거리기'],
+                            PokemonSkill['벌크업']
+                        ]
+                    },
+                    {
+                        level: 61,
+                        number: 373,
+                        skill: [
+                            PokemonSkill['아쿠아제트'],
+                            PokemonSkill['아쿠아브레이크'],
+                            PokemonSkill['사이코커터'],
+                            PokemonSkill['얼음엄니'],
+                        ]
+                    },
+                    {
+                        level: 61,
+                        number: 364,
+                        skill: [
+                            PokemonSkill['눈사태'],
+                            PokemonSkill['깨물어부수기'],
+                            PokemonSkill['지진'],
+                            PokemonSkill['바디프레스']
+                        ]
+                    },
+                    {
+                        level: 61,
+                        number: 369,
+                        skill: [
+                            PokemonSkill['아이언헤드'],
+                            PokemonSkill['도각참'],
+                            PokemonSkill['사념의박치기'],
+                            PokemonSkill['스톤에지'],
+                        ]
+                    },
+                    {
+                        level: 62,
+                        number: 309,
+                        skill: [
+                            PokemonSkill['테라버스트'],
+                            PokemonSkill['오물웨이브'],
+                            PokemonSkill['대지의힘'],
+                            PokemonSkill['매지컬샤인']
+                        ]
+                    }
+                ]
+            }
         ],
     },
 };
