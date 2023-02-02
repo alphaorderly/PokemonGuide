@@ -3,7 +3,7 @@ import BackLayout from '../../../layouts/BackLayout';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RouteProp } from '@react-navigation/native';
 import { FlatList } from 'react-native';
-import { ChampionList, StardustList } from '../../../consts/OpponentTrainers';
+import { ChampionList, LeagueList, StardustList } from '../../../consts/OpponentTrainers';
 import ChampionButton from '../../../components/MainDrawerNavigation/OpponentTrainer/TrainerButton';
 
 type Prop = {
@@ -23,6 +23,9 @@ const ScrOpponentTrainerList = (props: Prop) => {
             break;
         case 'stardust':
             data = StardustList;
+            break;
+        case 'league':
+            data = LeagueList;
             break;
         default:
             data = [];

@@ -40,7 +40,7 @@ const LogoLayout = (props: Prop) => {
             <Text style={{color: '#8F00FF'}}>VIOLET</Text> GUIDE
           </Text>
         </View>
-        <ScrollView style={Styles.ContentView}>{props.children}</ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false} style={Styles.ContentView}>{props.children}</ScrollView>
       </View>
     );
   } else {
