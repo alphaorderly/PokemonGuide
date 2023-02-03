@@ -156,6 +156,7 @@ const Styles = StyleSheet.create({
     },
     SkillView: {
         paddingVertical: 10,
+        paddingHorizontal: 5,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',

@@ -6,6 +6,7 @@ export default StyleSheet.create({
     MainView: {
         flex: 1,
         zIndex:-100,
+        ...Shadow,
     },
     InnerView: {
         marginVertical: 200,
@@ -13,7 +14,6 @@ export default StyleSheet.create({
         backgroundColor: Colors.DropdownBackground,
         flex: 1,
         borderRadius: 10,
-        ...Shadow,
     },
     PokemonTitleView: {
         flexDirection: 'row',
@@ -41,4 +41,37 @@ export default StyleSheet.create({
         fontSize: 20,
         fontFamily: 'NanumSquareNeoTTF-cBd',
     },
+    WholeSkillView: {
+        marginTop: 10,
+    },
+    SkillView: {
+        marginHorizontal: 30,
+        marginVertical: 10,
+        padding: 15,
+        ...Shadow,
+        borderRadius: 10,
+        backgroundColor: Colors.ModalBackground,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    SkillText: {
+        fontSize: 20,
+        fontFamily: 'NanumSquareNeoTTF-bRg',
+    },
+    SkillTypeView: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: 150,
+    },
+    SkillTypeIcon: {
+        height: 32,
+        width: 32,
+    },
+    SkillTypeText: {
+        width: 80,
+        fontSize: 20,
+        paddingHorizontal: 10,
+        fontFamily: 'DNFBitBitTTF'
+    }
 });
