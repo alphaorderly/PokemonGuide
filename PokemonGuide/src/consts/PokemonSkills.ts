@@ -990,7 +990,20 @@ export const PokemonSkill: SkillList = {
         name: '테라버스트',
         type: PokemonType.바위,
         mode: PokemonMode.특수,
+    },
+    오로라빔: {
+        name: '오로라빔',
+        type: PokemonType.얼음,
+        mode: PokemonMode.특수,
+    },
+    바늘미사일: {
+        name: '바늘미사일',
+        type: PokemonType.벌레,
+        mode: PokemonMode.물리,
+    },
+    회오리불꽃: {
+        name: '회오리불꽃',
+        type: PokemonType.불꽃,
+        mode: PokemonMode.특수,
     }
-
-
 }

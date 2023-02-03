@@ -3,7 +3,7 @@ import { PokemonType } from './TypeCounter';
 
 export const ChampionList = ['세르클 체육관', '보울 체육관', '누룩스 체육관', '카라프 체육관', '참푸르 체육관', '프리지 체육관', '베이크 체육관', '나페산 체육관'];
 
-export const StardustList = ['팀 세긴 기지', '팀 쉐다르 기지', '팀 시 기지', '팀 루크바 기지', '팀 카프 기지'];
+export const StardustList = ['팀 세긴 기지', '팀 쉐다르 기지', '팀 시 기지', '팀 루크바 기지', '팀 카프 기지', '스타단 최종보스'];
 
 export const LeagueList = ['첫번째 사천왕', '두번째 사천왕', '세번째 사천왕', '네번째 사천왕', '포켓몬 챔피언'];
 
@@ -1683,4 +1683,69 @@ export const Trainers: TrainerType = {
             }
         ],
     },
+    '스타단 최종보스': {
+        name: '???',
+        background: require('../../assets/images/blank.png'),
+        icon: require('../../assets/images/stardustImages/boss.png'),
+        type: [],
+        fight: [
+            {
+                level: [62, 63],
+                title: '스타단과의 최종전',
+                pokemon: [
+                    {
+                        level: 62,
+                        number: 184,
+                        skill: [
+                            PokemonSkill['악의파동'],
+                            PokemonSkill['전광석화'],
+                            PokemonSkill['초롱초롱눈동자'],
+                            PokemonSkill['사이코키네시스']
+                        ]
+                    },
+                    {
+                        level: 62,
+                        number: 180,
+                        skill: [
+                            PokemonSkill['하이드로펌프'],
+                            PokemonSkill['전광석화'],
+                            PokemonSkill['초롱초롱눈동자'],
+                            PokemonSkill['사이코키네시스']
+                        ]
+                    },
+                    {
+                        level: 62,
+                        number: 181,
+                        skill: [
+                            PokemonSkill['번개'],
+                            PokemonSkill['전광석화'],
+                            PokemonSkill['초롱초롱눈동자'],
+                            PokemonSkill['바늘미사일']
+                        ]
+                    },
+                    {
+                        level: 62,
+                        number: 182,
+                        skill: [
+                            PokemonSkill['플레어드라이브'],
+                            PokemonSkill['전광석화'],
+                            PokemonSkill['초롱초롱눈동자'],
+                            PokemonSkill['회오리불꽃']
+                        ]
+                    },
+                    {
+                        level: 62,
+                        number: 185,
+                        skill: [
+                            PokemonSkill['문포스'],
+                            PokemonSkill['전광석화'],
+                            PokemonSkill['초롱초롱눈동자'],
+                            PokemonSkill['섀도볼']
+                        ]
+                    }
+
+                ]
+            }
+        ]
+    }
 };
