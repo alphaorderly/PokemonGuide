@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import ScrOpponentTrainerMain from './ScrOpponentTrainerMain';
 import ScrOpponentTrainerList from './ScrOpponentTrainerList';
 import ScrOpponentTrainerDetail from './ScrOpponentTrainerDetail';
+import ScrOpponentTrainerPokemonDetail from './ScrOpponentTrainerPokemonDetail';
 
 
 const Stack = createStackNavigator();
@@ -15,6 +16,7 @@ const OpponentTrainerStackNavigation = () => {
       <Stack.Screen name="Main" component={ScrOpponentTrainerMain} />
       <Stack.Screen name="List" component={ScrOpponentTrainerList} />
       <Stack.Screen name="Detail" component={ScrOpponentTrainerDetail} />
+      <Stack.Screen name="PokemonDetail" component={ScrOpponentTrainerPokemonDetail} options={{ presentation: 'transparentModal' }} />
     </Stack.Navigator>
   );
 };

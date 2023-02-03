@@ -3,7 +3,7 @@ import { DrawerNavigationProp } from '@react-navigation/drawer/lib/typescript/sr
 import React, { useEffect, useState } from 'react';
 
 import Styles from '../../../styles/MainDrawerNavigation/PokemonList/ScrPokemonListMainStyle';
-import { TextInput, TouchableOpacity, View } from 'react-native';
+import { Alert, TextInput, TouchableOpacity, View } from 'react-native';
 import LogoLayout from '../../../layouts/LogoLayout';
 
 import pokemonList, { Pokemon } from '../../../states/PokemonList/PokemonList';
@@ -35,16 +35,19 @@ const ScrPokemonListMain = (props: Prop) => {
     const pokemonListSetting = useRecoilValue(PokemonListSetting);
 
     const getFile = async () => {
-        const item = JSON.parse(await AsyncStorage.getItem('PokemonList') ?? JSON.stringify(list));
-        setList(item);
-    }
+        const str = await AsyncStorage.getItem('PokemonList') ?? '';
+        if (str !== '') {
+            setList(JSON.parse(str));
+        }
+        console.log('get');
+    };
 
-    const setFile = async () => {
-        await AsyncStorage.setItem('PokemonList', JSON.stringify(list));
-    }
+    const setFile = async (saveList: Pokemon[]) => {
+        await AsyncStorage.setItem('PokemonList', JSON.stringify(saveList));
+    };
 
     useEffect(() => {
-        if(isFocused){ 
+        if (isFocused){
             getFile();
         }
     }, [isFocused]);
@@ -66,7 +69,7 @@ const ScrPokemonListMain = (props: Prop) => {
                         value={textBox}
                         onChangeText={setTextBox}
                     />
-                    <TouchableOpacity style={Styles.SettingButton} onPress={() => {props.navigation.navigate('Setting')}}>
+                    <TouchableOpacity style={Styles.SettingButton} onPress={() => {props.navigation.navigate('Setting');}}>
                         <MaterialIcon name="settings" size={30} />
                     </TouchableOpacity>
                 </View>

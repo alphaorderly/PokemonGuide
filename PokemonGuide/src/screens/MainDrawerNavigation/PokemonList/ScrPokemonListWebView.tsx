@@ -39,9 +39,9 @@ const ScrPokemonListWebView = (props: Prop) => {
             <Animated.View style={{...Styles.InnerView, transform: [{translateY: animation}]}}>
                 <View style={Styles.TopView}>
                     <Text style={Styles.TopText}>{pokemon.name} 상세정보</Text>
-                    <MaterialCommunity name="chevron-left" size={48} onPress={() => {webViewRef.current.goBack();}}/>
-                    <MaterialCommunity name="chevron-right" size={48} onPress={() => {webViewRef.current.goForward();}}/>
-                    <MaterialCommunity name="close" size={48} onPress={() => {props.navigation.pop();}}/>
+                    <MaterialCommunity name="chevron-left" size={32} onPress={() => {webViewRef.current.goBack();}}/>
+                    <MaterialCommunity name="chevron-right" size={32} onPress={() => {webViewRef.current.goForward();}}/>
+                    <MaterialCommunity name="close" size={32} onPress={() => {props.navigation.pop();}}/>
                 </View>
                 <WebView ref={webViewRef} style={Styles.WebView} source={{ uri: 'https://namu.wiki/w/' + pokemon.name }} />
             </Animated.View>

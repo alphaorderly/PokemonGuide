@@ -16,8 +16,6 @@ type Prop = {
 const CounterAnswer = (props: Prop) => {
   let ans = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
-  console.log(props.types)
-
   if (props.types.length === 0) {return;}
 
   if (props.attacked === true) {
@@ -74,13 +72,12 @@ export default CounterAnswer;
 
 const Styles = StyleSheet.create({
   MainView: {
-    marginVertical: 40,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    alignItems: 'center',
+    alignItems: 'flex-start',
   },
   BuffView: {
-
+    
   },
   NerfView: {
 
@@ -88,7 +85,7 @@ const Styles = StyleSheet.create({
   MainText: {
     textAlign: 'center',
     color: 'black',
-    fontSize: 18,
+    fontSize: 20,
     paddingVertical: 8,
     fontFamily: 'DNFBitBitTTF',
   },

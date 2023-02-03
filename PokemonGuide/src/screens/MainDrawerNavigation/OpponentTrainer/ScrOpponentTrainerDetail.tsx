@@ -37,7 +37,7 @@ const ScrOpponentTrainerDetail = (props: Prop) => {
                 {
                     trainer.fight.map(
                         (item, index) => {
-                            return <FightCard fight={item} key={index}/>;
+                            return <FightCard fight={item} key={index} navigation={props.navigation}/>;
                         }
                     )
                 }

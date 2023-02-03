@@ -7,10 +7,10 @@ export default StyleSheet.create({
     },
     InnerView: {
         backgroundColor: Colors.DropdownBackground,
-        marginTop: 80,
+        marginTop: 60,
         flex: 1,
         ...Shadow,
-        borderRadius: 30,
+        borderRadius: 12,
     },
     TopView: {
         flexDirection: 'row',
@@ -20,7 +20,7 @@ export default StyleSheet.create({
         paddingHorizontal: 20,
         },
     TopText: {
-        fontSize: 24,
+        fontSize: 20,
         fontFamily: 'NanumSquareNeoTTF-eHv'
     },
     WebView: {

@@ -7,14 +7,19 @@ export const StardustList = ['팀 세긴 기지', '팀 쉐다르 기지', '팀 �
 
 export const LeagueList = ['첫번째 사천왕', '두번째 사천왕', '세번째 사천왕', '네번째 사천왕', '포켓몬 챔피언'];
 
+export enum Sex { Male, Female, None }
+
+export type FightPokemonType = {
+    number: number,
+    level: number,
+    skill: Skill[],
+    sex: Sex
+}
+
 export type FightType = {
     level: [number, number],
     title: string
-    pokemon: {
-        number: number,
-        level: number,
-        skill: Skill[],
-    }[]
+    pokemon: FightPokemonType[]
 }
 
 export type TrainerType = {
@@ -45,6 +50,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['벌레의저항'],
                             PokemonSkill['두번치기'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         number : 12,
@@ -53,6 +59,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['벌레먹기'],
                             PokemonSkill['승부굳히기'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         number: 215,
@@ -61,6 +68,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['연속자르기'],
                             PokemonSkill['마구할퀴기'],
                         ],
+                        sex: Sex.Female,
                     },
                 ],
             },
@@ -77,6 +85,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['덤벼들기'],
                             PokemonSkill['뛰어오르기'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         number: 259,
@@ -87,6 +96,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['저주'],
                             PokemonSkill['스톤에지'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                        level: 65,
@@ -97,6 +107,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['깨트리기'],
                             PokemonSkill['스레드트랩'],
                        ],
+                       sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -107,6 +118,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['스톤에지'],
                             PokemonSkill['깜짝베기'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 66,
@@ -117,6 +129,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['치근거리기'],
                             PokemonSkill['깨물어부수기'],
                         ],
+                        sex: Sex.Female,
                     },
                 ],
             },
@@ -139,6 +152,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['수면가루'],
                             PokemonSkill['메가드레인'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 16,
@@ -147,6 +161,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['몸통박치기'],
                             PokemonSkill['잎날가르기'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 17,
@@ -155,6 +170,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['개척하기'],
                             PokemonSkill['돌떨구기'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -171,6 +187,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['나비춤'],
                             PokemonSkill['파괴광선'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -181,6 +198,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['버섯포자'],
                             PokemonSkill['번개펀치'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -191,6 +209,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['치근거리기'],
                             PokemonSkill['사념의박치기'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -201,6 +220,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['씨뿌리기'],
 							PokemonSkill['그래스필드'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 66,
@@ -211,6 +231,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['불꽃펀치'],
 							PokemonSkill['냉동펀치'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -234,6 +255,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['전광석화'],
 							PokemonSkill['스파크'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 23,
@@ -242,6 +264,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['물대포'],
 							PokemonSkill['스파크'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 23,
@@ -250,6 +273,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['스파크'],
 							PokemonSkill['물기'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 24,
@@ -259,6 +283,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['병상첨병'],
 							PokemonSkill['이상한빛'],
                         ],
+                        sex: Sex.Female,
                     },
                 ],
             }
@@ -276,6 +301,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['방전'],
 							PokemonSkill['순풍'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -286,6 +312,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['리플렉터'],
 							PokemonSkill['기습'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -296,6 +323,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['방전'],
 							PokemonSkill['기습'],
                         ],
+                        sex: Sex.None,
                     },
                     {
                         level: 65,
@@ -306,6 +334,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['사이코팽'],
 							PokemonSkill['얼음엄니'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 66,
@@ -316,6 +345,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['매지컬플레임'],
 							PokemonSkill['매지컬샤인'],
                         ],
+                        sex: Sex.Female,
                     },
                 ],
             },
@@ -339,6 +369,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['쪼아대기'],
 							PokemonSkill['아쿠아커터'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 29,
@@ -348,6 +379,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['물의파동'],
 							PokemonSkill['박치기'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         number: 119,
@@ -357,6 +389,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['바위깨기'],
 							PokemonSkill['힘껏치기'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -373,6 +406,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['사이코커터'],
 							PokemonSkill['깜짝베기'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -383,6 +417,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['눈보라'],
 							PokemonSkill['전광석화'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -393,6 +428,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['기습'],
 							PokemonSkill['분함의발구르기'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -403,6 +439,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['용의파동'],
 							PokemonSkill['파동탄'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 66,
@@ -413,6 +450,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['사념의박치기'],
 							PokemonSkill['인파이트'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -436,6 +474,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['깨물어부수기'],
 							PokemonSkill['힘껏치기'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 35,
@@ -445,6 +484,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['드릴라이너'],
 							PokemonSkill['뱀눈초리'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 36,
@@ -453,6 +493,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['객기'],
 							PokemonSkill['제비반환'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -469,6 +510,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['사념의박치기'],
 							PokemonSkill['아이언헤드'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -479,6 +521,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['우드해머'],
 							PokemonSkill['사념의박치기'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -489,6 +532,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['인파이트'],
 							PokemonSkill['암석봉인'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -499,6 +543,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['드래곤다이브'],
 							PokemonSkill['스톤에지'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 66,
@@ -509,6 +554,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['인파이트'],
 							PokemonSkill['도둑질'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -532,6 +578,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['기습'],
 							PokemonSkill['야습'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 41,
@@ -541,6 +588,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['야습'],
 							PokemonSkill['베어가르기'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 41,
@@ -550,6 +598,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['깨물어부수기'],
 							PokemonSkill['고스트다이브'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 42,
@@ -559,6 +608,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['병상첨병'],
 							PokemonSkill['하이퍼보이스'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -575,6 +625,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['야습'],
 							PokemonSkill['고스트다이브'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -585,6 +636,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['베어가르기'],
 							PokemonSkill['치근거리기'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -595,6 +647,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['저주'],
 							PokemonSkill['도깨비불'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -605,6 +658,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['고스트다이브'],
 							PokemonSkill['얼음엄니'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 66,
@@ -615,6 +669,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['하이퍼보이스'],
 							PokemonSkill['오물폭탄'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -638,6 +693,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['사념의박치기'],
 							PokemonSkill['리플렉터'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 44,
@@ -647,6 +703,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['매지컬샤인'],
 							PokemonSkill['에너지볼'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 44,
@@ -656,6 +713,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['전광석화'],
 							PokemonSkill['섀도볼'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 45,
@@ -665,6 +723,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['문포스'],
 							PokemonSkill['꽃보라'],
                         ],
+                        sex: Sex.Female,
                     },
                 ],
             },
@@ -681,6 +740,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['리플렉터'],
 							PokemonSkill['아이언헤드'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -691,6 +751,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['에너지볼'],
 							PokemonSkill['매지컬플레임'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -701,6 +762,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['섀도볼'],
 							PokemonSkill['매지컬샤인'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -711,6 +773,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['시저크로스'],
 							PokemonSkill['인파이트'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 66,
@@ -721,6 +784,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['꽃보라'],
 							PokemonSkill['애교부리기'],
                         ],
+                        sex: Sex.Female,
                     },
                 ],
             },
@@ -744,6 +808,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['벌레의야단법석'],
 							PokemonSkill['순풍'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 47,
@@ -753,6 +818,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['고드름떨구기'],
 							PokemonSkill['지진'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 47,
@@ -762,6 +828,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['아쿠아브레이크'],
 							PokemonSkill['얼음뭉치'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 48,
@@ -772,6 +839,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['문포스'],
 							PokemonSkill['폭풍'],
                         ],
+                        sex: Sex.Female,
                     },
                 ],
             },
@@ -787,6 +855,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['벌레의야단법석'],
 							PokemonSkill['순풍'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -796,6 +865,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['고드름떨구기'],
 							PokemonSkill['지진'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -806,6 +876,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['얼음뭉치'],
 							PokemonSkill['뛰어오르기'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -816,6 +887,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['섀도클로'],
 							PokemonSkill['시저크로스'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 66,
@@ -826,6 +898,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['문포스'],
 							PokemonSkill['폭풍'],
                         ],
+                        sex: Sex.Female,
                     },
                 ],
             },
@@ -849,6 +922,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['연속자르기'],
 							PokemonSkill['제비반환'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 20,
@@ -859,6 +933,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['금속음'],
 							PokemonSkill['스피드스타'],
                         ],
+                        sex: Sex.None,
                     },
                 ],
             },
@@ -875,6 +950,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['니들카드'],
 							PokemonSkill['번개펀치'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -885,6 +961,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['사이코키네시스'],
 							PokemonSkill['순풍'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -895,6 +972,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['보복'],
 							PokemonSkill['얼음엄니'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -905,6 +983,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['드래곤클로'],
 							PokemonSkill['불꽃엄니'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 66,
@@ -915,6 +994,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['칼춤'],
 							PokemonSkill['스톤에지'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -937,6 +1017,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['화염바퀴'],
 							PokemonSkill['클리어스모그'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 26,
@@ -947,6 +1028,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['싫은소리'],
 							PokemonSkill['스피드스타'],
                         ],
+                        sex: Sex.None,
                     },
                 ],
             },
@@ -963,6 +1045,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['플레어드라이브'],
 							PokemonSkill['스톤에지'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -973,6 +1056,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['바디프레스'],
 							PokemonSkill['지진'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -983,6 +1067,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['오물폭탄'],
 							PokemonSkill['번개엄니'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -993,6 +1078,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['인파이트'],
 							PokemonSkill['오버히트'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 66,
@@ -1003,6 +1089,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['에너지볼'],
 							PokemonSkill['사이코키네시스'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -1026,6 +1113,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['맹독'],
                             PokemonSkill['베놈쇼크'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 32,
@@ -1034,6 +1122,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['오물웨이브'],
                             PokemonSkill['진흙뿌리기'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 33,
@@ -1044,6 +1133,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['승부굳히기'],
                             PokemonSkill['땅고르기'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 32,
@@ -1054,6 +1144,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['니트로차지'],
                             PokemonSkill['스모그'],
                         ],
+                        sex: Sex.None,
                     },
                 ],
             },
@@ -1070,6 +1161,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['맹독'],
                             PokemonSkill['화염방사'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -1080,6 +1172,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['드레인펀치'],
                             PokemonSkill['녹기'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -1090,6 +1183,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['맹독'],
                             PokemonSkill['방어'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -1100,6 +1194,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['베놈쇼크'],
                             PokemonSkill['눈보라'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 66,
@@ -1110,6 +1205,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['사념의박치기'],
                             PokemonSkill['오버히트'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -1134,6 +1230,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['뛰어오르기'],
                             PokemonSkill['애교부리기'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 50,
@@ -1144,6 +1241,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['자이로볼'],
                             PokemonSkill['애교부리기'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 51,
@@ -1154,6 +1252,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['초롱초롱눈동자'],
                             PokemonSkill['진흙뿌리기'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 50,
@@ -1164,6 +1263,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['이상한빛'],
                             PokemonSkill['휠스핀'],
                         ],
+                        sex: Sex.None,
                     },
                 ],
             },
@@ -1180,6 +1280,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['리플렉터'],
                             PokemonSkill['빛의장막'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -1190,6 +1291,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['냉동펀치'],
                             PokemonSkill['깨트리기'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -1200,6 +1302,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['불꽃펀치'],
                             PokemonSkill['번개펀치'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -1210,6 +1313,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['섀도볼'],
                             PokemonSkill['미스트필드'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 66,
@@ -1220,6 +1324,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['얼음엄니'],
                             PokemonSkill['불꽃엄니'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -1243,6 +1348,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['깨트리기'],
                             PokemonSkill['기습'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 55,
@@ -1252,6 +1358,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['암석봉인'],
                             PokemonSkill['씨폭탄'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 55,
@@ -1261,6 +1368,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['파동탄'],
                             PokemonSkill['악의파동'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 56,
@@ -1271,6 +1379,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['냉동펀치'],
                             PokemonSkill['불꽃펀치'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 56,
@@ -1281,6 +1390,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['기어체인지'],
                             PokemonSkill['10만마력'],
                         ],
+                        sex: Sex.None,
                     },
                 ],
             },
@@ -1297,6 +1407,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['크로스촙'],
                             PokemonSkill['스톤샤워'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 65,
@@ -1307,6 +1418,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['기습'],
                             PokemonSkill['냉동펀치'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -1317,6 +1429,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['씨폭탄'],
                             PokemonSkill['지진'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 65,
@@ -1327,6 +1440,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['악의파동'],
                             PokemonSkill['신속'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 66,
@@ -1337,6 +1451,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['냉동펀치'],
                             PokemonSkill['더스트슈트'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -1361,6 +1476,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['눈보라'],
                             PokemonSkill['미래예지'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 57,
@@ -1371,6 +1487,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['러스터캐논'],
                             PokemonSkill['하품'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 57,
@@ -1381,6 +1498,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['아이언헤드'],
                             PokemonSkill['독찌르기'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 57,
@@ -1391,6 +1509,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['기습'],
                             PokemonSkill['모래바람'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 58,
@@ -1401,6 +1520,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['맹독'],
                             PokemonSkill['방어'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -1426,6 +1546,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['헤비봄버'],
                             PokemonSkill['스텔스록'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 57,
@@ -1436,6 +1557,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['빛의장막'],
                             PokemonSkill['트라이어택'],
                         ],
+                        sex: Sex.None,
                     },
                     {
                         level: 58,
@@ -1446,6 +1568,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['록블라스트'],
                             PokemonSkill['지진'],
                         ],
+                        sex: Sex.None,
                     },
                     {
                         level: 58,
@@ -1456,6 +1579,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['바디프레스'],
                             PokemonSkill['철벽'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 59,
@@ -1466,6 +1590,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['깨트리기'],
                             PokemonSkill['스톤에지'],
                         ],
+                        sex: Sex.Female,
                     },
                 ],
             },
@@ -1490,6 +1615,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['용의파동'],
                             PokemonSkill['쾌청'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 59,
@@ -1500,6 +1626,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['흔들흔들댄스'],
                             PokemonSkill['얼어붙은바람'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 59,
@@ -1510,6 +1637,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['냉동빔'],
                             PokemonSkill['용의파동'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 59,
@@ -1520,6 +1648,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['인파이트'],
                             PokemonSkill['도둑질'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 60,
@@ -1530,6 +1659,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['지옥찌르기'],
                             PokemonSkill['아쿠아브레이크'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -1554,6 +1684,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['분노의앞니'],
                             PokemonSkill['폭음파'],
                         ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 67,
@@ -1564,6 +1695,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['아이언헤드'],
                             PokemonSkill['암석봉인'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 67,
@@ -1574,6 +1706,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['하이드로펌프'],
                             PokemonSkill['10만볼트'],
                         ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 67,
@@ -1584,16 +1717,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['제비반환'],
                             PokemonSkill['씨뿌리기'],
                         ],
-                    },
-                    {
-                        level: 67,
-                        number: 349,
-                        skill: [
-                            PokemonSkill['신속'],
-                            PokemonSkill['드래곤다이브'],
-                            PokemonSkill['불꽃펀치'],
-                            PokemonSkill['스톤에지'],
-                        ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 68,
@@ -1604,6 +1728,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['대검돌격'],
                             PokemonSkill['얼음뭉치'],
                         ],
+                        sex: Sex.Male,
                     },
                 ],
             },
@@ -1626,8 +1751,9 @@ export const Trainers: TrainerType = {
                             PokemonSkill['루미나콜리전'],
                             PokemonSkill['매지컬샤인'],
                             PokemonSkill['전광석화'],
-                            PokemonSkill['리플렉터']
-                        ]
+                            PokemonSkill['리플렉터'],
+                        ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 61,
@@ -1636,8 +1762,9 @@ export const Trainers: TrainerType = {
                             PokemonSkill['우드혼'],
                             PokemonSkill['사념의박치기'],
                             PokemonSkill['치근거리기'],
-                            PokemonSkill['벌크업']
-                        ]
+                            PokemonSkill['벌크업'],
+                        ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 61,
@@ -1647,7 +1774,8 @@ export const Trainers: TrainerType = {
                             PokemonSkill['아쿠아브레이크'],
                             PokemonSkill['사이코커터'],
                             PokemonSkill['얼음엄니'],
-                        ]
+                        ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 61,
@@ -1656,8 +1784,9 @@ export const Trainers: TrainerType = {
                             PokemonSkill['눈사태'],
                             PokemonSkill['깨물어부수기'],
                             PokemonSkill['지진'],
-                            PokemonSkill['바디프레스']
-                        ]
+                            PokemonSkill['바디프레스'],
+                        ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 61,
@@ -1667,7 +1796,8 @@ export const Trainers: TrainerType = {
                             PokemonSkill['도각참'],
                             PokemonSkill['사념의박치기'],
                             PokemonSkill['스톤에지'],
-                        ]
+                        ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 62,
@@ -1676,11 +1806,12 @@ export const Trainers: TrainerType = {
                             PokemonSkill['테라버스트'],
                             PokemonSkill['오물웨이브'],
                             PokemonSkill['대지의힘'],
-                            PokemonSkill['매지컬샤인']
-                        ]
-                    }
-                ]
-            }
+                            PokemonSkill['매지컬샤인'],
+                        ],
+                        sex: Sex.Male,
+                    },
+                ],
+            },
         ],
     },
     '스타단 최종보스': {
@@ -1700,8 +1831,9 @@ export const Trainers: TrainerType = {
                             PokemonSkill['악의파동'],
                             PokemonSkill['전광석화'],
                             PokemonSkill['초롱초롱눈동자'],
-                            PokemonSkill['사이코키네시스']
-                        ]
+                            PokemonSkill['사이코키네시스'],
+                        ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 62,
@@ -1710,8 +1842,9 @@ export const Trainers: TrainerType = {
                             PokemonSkill['하이드로펌프'],
                             PokemonSkill['전광석화'],
                             PokemonSkill['초롱초롱눈동자'],
-                            PokemonSkill['사이코키네시스']
-                        ]
+                            PokemonSkill['사이코키네시스'],
+                        ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 62,
@@ -1720,8 +1853,9 @@ export const Trainers: TrainerType = {
                             PokemonSkill['번개'],
                             PokemonSkill['전광석화'],
                             PokemonSkill['초롱초롱눈동자'],
-                            PokemonSkill['바늘미사일']
-                        ]
+                            PokemonSkill['바늘미사일'],
+                        ],
+                        sex: Sex.Male,
                     },
                     {
                         level: 62,
@@ -1730,8 +1864,20 @@ export const Trainers: TrainerType = {
                             PokemonSkill['플레어드라이브'],
                             PokemonSkill['전광석화'],
                             PokemonSkill['초롱초롱눈동자'],
-                            PokemonSkill['회오리불꽃']
-                        ]
+                            PokemonSkill['회오리불꽃'],
+                        ],
+                        sex: Sex.Female,
+                    },
+                    {
+                        level: 62,
+                        number: 185,
+                        skill: [
+                            PokemonSkill['리프블레이드'],
+                            PokemonSkill['전광석화'],
+                            PokemonSkill['초롱초롱눈동자'],
+                            PokemonSkill['시저크로스'],
+                        ],
+                        sex: Sex.Female,
                     },
                     {
                         level: 62,
@@ -1740,12 +1886,13 @@ export const Trainers: TrainerType = {
                             PokemonSkill['문포스'],
                             PokemonSkill['전광석화'],
                             PokemonSkill['초롱초롱눈동자'],
-                            PokemonSkill['섀도볼']
-                        ]
-                    }
+                            PokemonSkill['섀도볼'],
+                        ],
+                        sex: Sex.Female,
+                    },
 
-                ]
-            }
-        ]
-    }
+                ],
+            },
+        ],
+    },
 };

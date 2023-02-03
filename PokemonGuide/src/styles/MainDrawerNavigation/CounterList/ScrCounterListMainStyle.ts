@@ -34,8 +34,8 @@ export default StyleSheet.create({
     borderTopWidth: 0,
     borderLeftWidth: 0,
     borderRightWidth: 0,
-    borderBottomWidth: 2,
-    borderRadius: 0,
+    borderBottomWidth: 0,
+    borderRadius: 10,
     backgroundColor: Colors.DropdownBackground,
   },
   ModalContainer: {
