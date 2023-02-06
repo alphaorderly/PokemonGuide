@@ -1,6 +1,6 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import LogoLayout from '../../../layouts/LogoLayout';
 
 import {DrawerNavigationProp} from '@react-navigation/drawer';
@@ -10,12 +10,21 @@ import Styles from '../../../styles/MainDrawerNavigation/CounterList/ScrCounterL
 import DropDownPicker from 'react-native-dropdown-picker';
 import {PokemonTypes} from '../../../consts/TypeCounter';
 import CounterAnswer from '../../../components/MainDrawerNavigation/CounterList/CounterAnswer';
+import { useFocusEffect, useIsFocused } from '@react-navigation/native';
 
 type Prop = {
   navigation: DrawerNavigationProp<any, any>;
 };
 
 const ScrCounterListMain = (props: Prop) => {
+
+  useFocusEffect(
+    useCallback(() => {
+      props.navigation.setOptions({ swipeEnabled: true })
+      return () => props.navigation.setOptions({ swipeEnabled: false })
+    }, [props.navigation])
+  )
+
   const [victimOpen, setVictimOpen] = useState<boolean>(false);
   const [victimValue, setVictimValue] = useState<number[]>([]);
   const [hostileOpen, setHostileOpen] = useState<boolean>(false);

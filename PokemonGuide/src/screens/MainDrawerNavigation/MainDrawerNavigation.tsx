@@ -23,6 +23,7 @@ const MainDrawerNavigation = () => {
         drawerInactiveTintColor: '#EDEDE9',
         drawerStyle: Styles.DrawerStyle,
         drawerLabelStyle: Styles.DrawerLabelStyle,
+        swipeEnabled: false,
       }}>
       <Drawer.Screen
         name="CounterList"
@@ -32,7 +33,7 @@ const MainDrawerNavigation = () => {
       <Drawer.Screen
         name="PokemonList"
         component={PokemonListStackNavigation}
-        options={{title: '도감 리스트'}}
+        options={{title: '도감 리스트', }}
       />
       <Drawer.Screen
         name="OpponentTrainer"
