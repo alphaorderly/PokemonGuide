@@ -11,6 +11,8 @@ import {PokemonTypes} from '../../../consts/TypeCounter';
 import CounterAnswer from '../../../components/MainDrawerNavigation/CounterList/CounterAnswer';
 import { useFocusEffect } from '@react-navigation/native';
 import Material from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Shadow } from 'react-native-shadow-2';
+import CounterListItem from '../../../components/MainDrawerNavigation/CounterList/CounterListItem';
 
 type Prop = {
   navigation: DrawerNavigationProp<any, any>;
@@ -25,7 +27,7 @@ const ScrCounterListMain = (props: Prop) => {
     }, [props.navigation])
   );
 
-  const [victimOpen, setVictimOpen] = useState<boolean>(true);
+  const [victimOpen, setVictimOpen] = useState<boolean>(false);
   const [victimValue, setVictimValue] = useState<number[]>([]);
   const [hostileOpen, setHostileOpen] = useState<boolean>(false);
   const [hostileValue, setHostileValue] = useState<number[]>([]);
@@ -35,6 +37,9 @@ const ScrCounterListMain = (props: Prop) => {
       <Text style={Styles.TitleText}>상성 계산기</Text>
       <View style={Styles.VictimView}>
         <Text style={Styles.VictimText}>공격 당하는 포켓몬 타입</Text>
+        <Shadow
+          distance={3}
+        >
         <DropDownPicker
           schema={{
             icon: 'pickerIcon',
@@ -79,10 +84,15 @@ const ScrCounterListMain = (props: Prop) => {
           searchContainerStyle={{
             borderBottomWidth: 0,
           }}
-        />
+          renderListItem={p => <CounterListItem {...p} />}
+        /> 
+        </Shadow>
       </View>
       <View style={Styles.HostileView}>
         <Text style={Styles.HostileText}>공격 하는 포켓몬 타입</Text>
+        <Shadow
+          distance={3}
+        >
         <DropDownPicker
           schema={{
             icon: 'pickerIcon',
@@ -129,7 +139,9 @@ const ScrCounterListMain = (props: Prop) => {
           searchContainerStyle={{
             borderBottomWidth: 0,
           }}
+          renderListItem={p => <CounterListItem {...p} />}
         />
+        </Shadow>
       </View>
       <View>
         <CounterAnswer

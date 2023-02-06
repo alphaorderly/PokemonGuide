@@ -6,7 +6,6 @@ export default StyleSheet.create({
     MainView: {
         flex: 1,
         zIndex:-100,
-        ...Shadow,
     },
     InnerView: {
         marginVertical: 200,
@@ -48,7 +47,6 @@ export default StyleSheet.create({
         marginHorizontal: 30,
         marginVertical: 10,
         padding: 15,
-        ...Shadow,
         borderRadius: 10,
         backgroundColor: Colors.ModalBackground,
         flexDirection: 'row',

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { Trainers } from '../../../consts/OpponentTrainers';
-import { Shadow } from '../../../themes/shadows';
 import { PokemonTypes } from '../../../consts/TypeCounter';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Shadow } from 'react-native-shadow-2';
 
 type Prop = {
     navigation: StackNavigationProp<any, any>
@@ -13,33 +13,41 @@ type Prop = {
 
 const ChampionButton = (props: Prop) => {
 
-    const item = Trainers[props.name]
+    const item = Trainers[props.name];
 
     return (
-        <ImageBackground blurRadius={10} style={Styles.MainImageStyle} imageStyle={Styles.MainImage} source={item.background}>
-            <TouchableOpacity style={Styles.MainView} onPress={() => {props.navigation.navigate('Detail', {name: props.name})}}>
-                <Image style={Styles.MainIcon} source={item.icon}/>
-                <View style={Styles.DescriptionView}>
-                    <Text style={Styles.DescriptionJob}>{props.name}</Text>
-                    <Text style={Styles.DescriptionName}>{item.name}</Text>
-                    {
-                        item.type.map(elem => {
-                            return <Text key={elem} style={{...Styles.DescriptionType}}>{PokemonTypes[elem].label}</Text>;
-                        })
-                    }
-                </View>
-            </TouchableOpacity>
-        </ImageBackground>
-    )
-}
+        <Shadow style={Styles.Shadow} containerStyle={Styles.ShadowContainer} distance={3} startColor="#00000022">
+            <ImageBackground blurRadius={10} style={Styles.MainImageStyle} imageStyle={Styles.MainImage} source={item.background}>
+                <TouchableOpacity style={Styles.MainView} onPress={() => {props.navigation.navigate('Detail', {name: props.name});}}>
+                    <Image style={Styles.MainIcon} source={item.icon}/>
+                    <View style={Styles.DescriptionView}>
+                        <Text style={Styles.DescriptionJob}>{props.name}</Text>
+                        <Text style={Styles.DescriptionName}>{item.name}</Text>
+                        {
+                            item.type.map(elem => {
+                                return <Text key={elem} style={{...Styles.DescriptionType}}>{PokemonTypes[elem].label}</Text>;
+                            })
+                        }
+                    </View>
+                </TouchableOpacity>
+            </ImageBackground>
+        </Shadow>
+    );
+};
 
 export default ChampionButton;
 
 const Styles = StyleSheet.create({
-    MainImageStyle: {
+    Shadow: {
+        borderRadius: 15,
+        width: '100%',
+    },
+    ShadowContainer: {
         margin: 10,
         height: 150,
-        ...Shadow,
+        flex: 1,
+    },
+    MainImageStyle: {
     },
     MainImage: {
         borderRadius: 15,
@@ -58,7 +66,7 @@ const Styles = StyleSheet.create({
         width: 64,
     },
     DescriptionView: {
-        
+
     },
     DescriptionJob: {
         fontSize: 30,
@@ -77,5 +85,5 @@ const Styles = StyleSheet.create({
         fontFamily: 'DNFBitBitTTF',
         padding: 4,
         textAlign: 'right',
-    }
-})
+    },
+});

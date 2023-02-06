@@ -9,7 +9,6 @@ export default StyleSheet.create({
         backgroundColor: Colors.DropdownBackground,
         marginTop: 60,
         flex: 1,
-        ...Shadow,
         borderRadius: 12,
     },
     TopView: {

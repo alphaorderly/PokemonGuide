@@ -12,7 +12,6 @@ export default StyleSheet.create({
         backgroundColor: Colors.DropdownBackground,
         flex: 1,
         borderRadius: 10,
-        ...Shadow,
     },
     TopView: {
         backgroundColor: '#f3e5da77',
@@ -34,7 +33,6 @@ export default StyleSheet.create({
         padding: 10,
         backgroundColor: '#EE3424AA',
         borderRadius: 10,
-        ...Shadow,
     },
     SettingItemView: {
         flexDirection: 'row',

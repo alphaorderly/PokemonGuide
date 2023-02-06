@@ -4,10 +4,10 @@ import { Pokemon } from '../../../states/PokemonList/PokemonList';
 import { SetterOrUpdater } from 'recoil';
 
 import MaterialCommunity from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Shadow } from '../../../themes/shadows';
 import { NavigationProp } from '@react-navigation/native';
 import { PokemonTypes } from '../../../consts/TypeCounter';
 import CounterAnswer from '../CounterList/CounterAnswer';
+import { Shadow } from 'react-native-shadow-2';
 
 type Prop = {
     item: Pokemon,
@@ -25,103 +25,105 @@ const PokemonButton = (props: Prop) => {
     return (
         <View style={Styles.MainView}>
             <Text style={Styles.PokemonNumber}>{props.item.number}</Text>
-            <View style={Styles.BoxView}>
-                <View style={Styles.BoxFirstRow}>
-                    <Image source={imagePwd[props.item.number-1]} style={Styles.PokeImage}/>
-                    <Text style={Styles.NameText}>{props.item.name}</Text>
-                    <View style={Styles.Buttons}>
-                        <MaterialCommunity
-                            color={props.item.catch ? 'black' : '#00000022'}
-                            name="pokeball"
-                            size={25}
-                            style={Styles.PokeBall}
-                            onPress={
-                                () => {
-                                    props.setPokemon(prev => {
-                                        let p = prev.map(
-                                            item => {
-                                                if (item.name === props.item.name) {
-                                                    item.catch = !item.catch;
-                                                    if (item.catch === true) {
-                                                        item.seen = true;
+            <Shadow style={Styles.BoxShadow} containerStyle={Styles.BoxShadowContainer} distance={3} startColor='#00000022'>
+                <View style={Styles.BoxView}>
+                    <View style={Styles.BoxFirstRow}>
+                        <Image source={imagePwd[props.item.number-1]} style={Styles.PokeImage}/>
+                        <Text style={Styles.NameText}>{props.item.name}</Text>
+                        <View style={Styles.Buttons}>
+                            <MaterialCommunity
+                                color={props.item.catch ? 'black' : '#00000022'}
+                                name="pokeball"
+                                size={25}
+                                style={Styles.PokeBall}
+                                onPress={
+                                    () => {
+                                        props.setPokemon(prev => {
+                                            let p = prev.map(
+                                                item => {
+                                                    if (item.name === props.item.name) {
+                                                        item.catch = !item.catch;
+                                                        if (item.catch === true) {
+                                                            item.seen = true;
+                                                        }
                                                     }
+                                                    return item;
                                                 }
-                                                return item;
+                                            );
+                                            props.setFile(p);
+                                            return p;
                                             }
                                         );
-                                        props.setFile(p);
-                                        return p;
-                                        }
-                                    );
+                                    }
                                 }
-                            }
-                        />
-                        <MaterialCommunity
-                            color={props.item.seen ? 'black' : '#00000022'}
-                            name="eye"
-                            size={25}
-                            style={Styles.Seen}
-                            onPress={
-                                () => {
-                                    props.setPokemon(prev => {
-                                        let p = prev.map(
-                                            item => {
-                                                if (item.name === props.item.name) {
-                                                    item.seen = !item.seen;
-                                                    if (item.seen === false) {
-                                                        item.catch = false;
+                            />
+                            <MaterialCommunity
+                                color={props.item.seen ? 'black' : '#00000022'}
+                                name="eye"
+                                size={25}
+                                style={Styles.Seen}
+                                onPress={
+                                    () => {
+                                        props.setPokemon(prev => {
+                                            let p = prev.map(
+                                                item => {
+                                                    if (item.name === props.item.name) {
+                                                        item.seen = !item.seen;
+                                                        if (item.seen === false) {
+                                                            item.catch = false;
+                                                        }
                                                     }
+                                                    return item;
                                                 }
-                                                return item;
+                                            );
+                                            props.setFile(p);
+                                            return p;
                                             }
                                         );
-                                        props.setFile(p);
-                                        return p;
-                                        }
-                                    );
+                                    }
                                 }
-                            }
-                        />
-                        <MaterialCommunity
-                            color={'#1212FF88'}
-                            name="information-outline"
-                            size={25}
-                            style={Styles.Link}
-                            onPress={
-                                () => {
-                                    props.navigation.navigate('WebView', props.item)
+                            />
+                            <MaterialCommunity
+                                color={'#1212FF88'}
+                                name="information-outline"
+                                size={25}
+                                style={Styles.Link}
+                                onPress={
+                                    () => {
+                                        props.navigation.navigate('WebView', props.item)
+                                    }
                                 }
-                            }
-                        />
-                    </View>
-                </View>
-                {
-                    !description ?
-                    <MaterialCommunity name='chevron-down' size={24} style={Styles.DescriptionToggle} onPress={() => setDescription(prev => !prev)}/>
-                    :
-                    <View style={Styles.DescriptionView}>
-                        <View style={Styles.DescriptionTypesView}>
-                            {
-                                props.item.type.map((item) => {
-                                    return(
-                                        <View key={item} style={{flexDirection: 'row', alignItems: 'center', width: 100, justifyContent: 'space-evenly'}}>
-                                            <Image source={PokemonTypes[item].icon} style={{width: 24, height:24, resizeMode:'cover'}}/>
-                                            <Text style={{fontSize: 24, fontFamily: 'DNFBitBitTTF'}}>{PokemonTypes[item].label}</Text>
-                                        </View>
-                                    )
-                                })
-                            }
-                        </View>
-                        <View style={Styles.DescriptionWeaknessView}>
-                            <CounterAnswer
-                                types={props.item.type}
-                                attacked={true}
                             />
                         </View>
-                        <MaterialCommunity name='chevron-up' size={24} style={Styles.DescriptionToggle} onPress={() => setDescription(prev => !prev)} />
                     </View>
-                }
-            </View>
+                    {
+                        !description ?
+                        <MaterialCommunity name='chevron-down' size={24} style={Styles.DescriptionToggle} onPress={() => setDescription(prev => !prev)}/>
+                        :
+                        <View style={Styles.DescriptionView}>
+                            <View style={Styles.DescriptionTypesView}>
+                                {
+                                    props.item.type.map((item) => {
+                                        return(
+                                            <View key={item} style={{flexDirection: 'row', alignItems: 'center', width: 100, justifyContent: 'space-evenly'}}>
+                                                <Image source={PokemonTypes[item].icon} style={{width: 24, height:24, resizeMode:'cover'}}/>
+                                                <Text style={{fontSize: 24, fontFamily: 'DNFBitBitTTF'}}>{PokemonTypes[item].label}</Text>
+                                            </View>
+                                        )
+                                    })
+                                }
+                            </View>
+                            <View style={Styles.DescriptionWeaknessView}>
+                                <CounterAnswer
+                                    types={props.item.type}
+                                    attacked={true}
+                                />
+                            </View>
+                            <MaterialCommunity name='chevron-up' size={24} style={Styles.DescriptionToggle} onPress={() => setDescription(prev => !prev)} />
+                        </View>
+                    }
+                </View>
+            </Shadow>
         </View>
 
     );
@@ -133,7 +135,6 @@ const Styles = StyleSheet.create({
     MainView: {
         flexDirection: 'row',
         alignItems: 'center',
-        ...Shadow,
     },
     PokeImage: {
         width: 40,
@@ -147,14 +148,19 @@ const Styles = StyleSheet.create({
         textAlign: 'center',
         paddingLeft: 10,
     },
+    BoxShadow: {
+        width: '100%',
+    },
+    BoxShadowContainer: {
+        margin: 10,
+        flexGrow: 1, 
+    },
     BoxView: {
-        flex: 1,
         paddingTop: 10,
         paddingBottom: 5,
         paddingHorizontal: 15,
         backgroundColor: '#FFFFFFBB',
-        margin: 10,
-        borderRadius: 7,
+        borderRadius: 10,
     },
     BoxFirstRow: {
         flexDirection: 'row',

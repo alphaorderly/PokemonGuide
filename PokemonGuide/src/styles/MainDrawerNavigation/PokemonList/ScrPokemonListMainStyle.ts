@@ -9,16 +9,22 @@ export default StyleSheet.create({
         flexDirection: 'row',
         alignItem: 'center',
     },
+    SearchShadow: {
+        height: 50,
+        width: '100%',
+    },
+    SearchContainerShadow: {
+        margin: 10,
+        flexGrow: 1,
+    },
     SearchBar: {
         backgroundColor: '#FFFFFFCC',
-        margin: 10,
-        height: 50,
         borderRadius: 10,
         paddingHorizontal: 15,
         fontSize: 20,
         fontFamily: 'NanumSquareNeoTTF-bRg',
-        flex: 1,
-        ...Shadow,
+        flexGrow: 1,
+        width: '100%',
     },
     SettingButton: {
         alignSelf: 'center',

@@ -19,6 +19,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useIsFocused } from '@react-navigation/core';
 import { NavigationProp, useFocusEffect } from '@react-navigation/native';
 import { PokemonListSetting } from '../../../states/PokemonList/PokemonListSetting';
+import { Shadow } from 'react-native-shadow-2';
 
 
 type Prop = {
@@ -52,6 +53,12 @@ const ScrPokemonListMain = (props: Prop) => {
         }
     }, [isFocused]);
 
+    const [textBox, setTextBox] = useState<string>('');
+
+    const listItem = ({item}) => {
+        return <PokemonButton navigation={props.navigation} item={item} setPokemon={setList} setFile={setFile}/>;
+    };
+
     useFocusEffect(
         useCallback(() => {
           const parent = props.navigation.getParent()
@@ -61,16 +68,11 @@ const ScrPokemonListMain = (props: Prop) => {
         }, [props.navigation])
       )
 
-    const [textBox, setTextBox] = useState<string>('');
-
-    const listItem = ({item}) => {
-        return <PokemonButton navigation={props.navigation} item={item} setPokemon={setList} setFile={setFile}/>;
-    };
-
     return (
         <LogoLayout navigation={props.navigation}>
             <View style={Styles.MainView}>
                 <View style={Styles.SearchView}>
+                    <Shadow style={Styles.SearchShadow} containerStyle={Styles.SearchContainerShadow} distance={3} startColor='#00000022'>
                     <TextInput
                         style={Styles.SearchBar}
                         placeholder="이름을 입력하세요"
@@ -78,6 +80,7 @@ const ScrPokemonListMain = (props: Prop) => {
                         value={textBox}
                         onChangeText={setTextBox}
                     />
+                    </Shadow>
                     <TouchableOpacity style={Styles.SettingButton} onPress={() => {props.navigation.navigate('Setting');}}>
                         <MaterialIcon name="settings" size={30} />
                     </TouchableOpacity>

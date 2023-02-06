@@ -84,6 +84,5 @@ export default StyleSheet.create({
   },
   WholeList: {
     flexDirection: 'column',
-    ...Shadow,
   }
 });

@@ -100,7 +100,6 @@ const Styles = StyleSheet.create({
         margin: 10,
         backgroundColor: Colors.DropdownBackground,
         borderRadius: 15,
-        ...Shadow,
     },
     TitleView: {
         paddingTop: 20,
@@ -122,7 +121,6 @@ const Styles = StyleSheet.create({
         padding: 20,
         margin: 5,
         marginTop: 10,
-        ...Shadow,
         backgroundColor: Colors.ModalBackground,
         borderRadius: 10,
     },
