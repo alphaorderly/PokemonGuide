@@ -1,6 +1,5 @@
-/* eslint-disable eqeqeq */
-/* eslint-disable react-native/no-inline-styles */
-import React, {useCallback, useEffect, useState} from 'react';
+
+import React, {useCallback, useState} from 'react';
 import LogoLayout from '../../../layouts/LogoLayout';
 
 import {DrawerNavigationProp} from '@react-navigation/drawer';
@@ -10,7 +9,8 @@ import Styles from '../../../styles/MainDrawerNavigation/CounterList/ScrCounterL
 import DropDownPicker from 'react-native-dropdown-picker';
 import {PokemonTypes} from '../../../consts/TypeCounter';
 import CounterAnswer from '../../../components/MainDrawerNavigation/CounterList/CounterAnswer';
-import { useFocusEffect, useIsFocused } from '@react-navigation/native';
+import { useFocusEffect } from '@react-navigation/native';
+import Material from 'react-native-vector-icons/MaterialCommunityIcons';
 
 type Prop = {
   navigation: DrawerNavigationProp<any, any>;
@@ -20,12 +20,12 @@ const ScrCounterListMain = (props: Prop) => {
 
   useFocusEffect(
     useCallback(() => {
-      props.navigation.setOptions({ swipeEnabled: true })
-      return () => props.navigation.setOptions({ swipeEnabled: false })
+      props.navigation.setOptions({ swipeEnabled: true });
+      return () => props.navigation.setOptions({ swipeEnabled: false });
     }, [props.navigation])
-  )
+  );
 
-  const [victimOpen, setVictimOpen] = useState<boolean>(false);
+  const [victimOpen, setVictimOpen] = useState<boolean>(true);
   const [victimValue, setVictimValue] = useState<number[]>([]);
   const [hostileOpen, setHostileOpen] = useState<boolean>(false);
   const [hostileValue, setHostileValue] = useState<number[]>([]);
@@ -69,6 +69,16 @@ const ScrCounterListMain = (props: Prop) => {
           badgeTextStyle={Styles.BadgeText}
           listItemContainerStyle={Styles.ListContainer}
           listItemLabelStyle={Styles.ListLabel}
+          selectedItemContainerStyle={Styles.SelectedListContainer}
+          selectedItemLabelStyle={Styles.SelectedListLabel}
+          showArrowIcon={false}
+          showTickIcon={false}
+          CloseIconComponent={({style}) => <Material name='close' size={32} style={style} />}
+          flatListProps={{  contentContainerStyle: Styles.WholeList, numColumns: 2, }}
+          placeholderStyle={Styles.Placeholder}
+          searchContainerStyle={{
+            borderBottomWidth: 0,
+          }}
         />
       </View>
       <View style={Styles.HostileView}>
@@ -109,6 +119,16 @@ const ScrCounterListMain = (props: Prop) => {
           badgeTextStyle={Styles.BadgeText}
           listItemContainerStyle={Styles.ListContainer}
           listItemLabelStyle={Styles.ListLabel}
+          selectedItemContainerStyle={Styles.SelectedListContainer}
+          selectedItemLabelStyle={Styles.SelectedListLabel}
+          flatListProps={{ style: Styles.WholeList, numColumns: 2, }}
+          showArrowIcon={false}
+          showTickIcon={false}
+          CloseIconComponent={({style}) =><Material name='close' size={32} style={style} />}
+          placeholderStyle={Styles.Placeholder}
+          searchContainerStyle={{
+            borderBottomWidth: 0,
+          }}
         />
       </View>
       <View>
