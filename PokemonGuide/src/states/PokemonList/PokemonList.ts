@@ -2,11 +2,11 @@ import { atom } from 'recoil';
 import { PokemonType } from '../../consts/TypeCounter';
 
 export type Pokemon = {
-  'number': number;
-  'name': string,
-  'catch': boolean,
-  'seen': boolean,
-  'type': PokemonType[]
+  number: number;
+  name: string,
+  catch: boolean,
+  seen: boolean,
+  type: PokemonType[]
 }
 
 const PokemonList = atom<Pokemon[]>({

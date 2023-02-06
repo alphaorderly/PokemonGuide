@@ -66,6 +66,28 @@ const FightCard = (props: Prop) => {
                                     <Material name={ `gender-${genderName(item.sex)}`} size={24} color={genderColor(item.sex)}/>
                                     <Text style={Styles.PokemonTitleLevel}>{item.level}.Lv</Text>
                                 </View>
+                                <View style={Styles.PokemonTypeView}>
+                                    {
+                                        pokemon.type.map((i) => {
+                                            return (
+                                                <View style={Styles.PokemonSingleTypeView}>
+                                                    <Image source={PokemonTypes[i].icon} style={Styles.PokemonTypeImage}/>
+                                                    <Text style={Styles.PokemonTypeText}>{PokemonTypes[i].label}</Text>
+                                                </View>
+                                            )
+                                        })
+                                    }
+                                </View>
+                                {   
+                                    item.terastal === undefined || 
+                                    <View style={Styles.PokemonTypeView}>
+                                        <View style={Styles.PokemonSingleTypeView}>
+                                            <Text style={Styles.PokemonTypeText}>테라스탈 타입 </Text>
+                                            <Image source={PokemonTypes[item.terastal].icon} style={Styles.PokemonTypeImage}/>
+                                            <Text style={Styles.PokemonTypeText}>{PokemonTypes[item.terastal].label}</Text>
+                                        </View>
+                                    </View>
+                                } 
                                 <View style={Styles.WholeSkillView}>
                                     {
                                         item.skill.map(
@@ -148,6 +170,23 @@ const Styles = StyleSheet.create({
     PokemonTitleLevel: {
         fontSize: 20,
         fontFamily: 'NanumSquareNeoTTF-cBd',
+    },
+    PokemonTypeView: {
+        padding: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly'
+    },
+    PokemonSingleTypeView: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    PokemonTypeImage: {
+        height: 32,
+        resizeMode: 'contain'
+    },
+    PokemonTypeText: {
+        fontSize: 24,
+        fontFamily: 'DNFBitBitTTF'
     },
     WholeSkillView: {
         marginTop: 10,
