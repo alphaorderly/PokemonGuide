@@ -1465,7 +1465,7 @@ export const Trainers: TrainerType = {
         fight: [
             {
                 level: [57, 58],
-                title: '',
+                title: '땅타입 챔피언',
                 pokemon: [
                     {
                         level: 57,
@@ -1535,7 +1535,7 @@ export const Trainers: TrainerType = {
         fight: [
             {
                 level: [57, 59],
-                title: '',
+                title: '강철타입 챔피언',
                 pokemon: [
                     {
                         level: 58,
@@ -1604,7 +1604,7 @@ export const Trainers: TrainerType = {
         fight: [
             {
                 level: [59, 60],
-                title: '',
+                title: '비행타입 챔피언',
                 pokemon: [
                     {
                         level: 59,
@@ -1673,7 +1673,7 @@ export const Trainers: TrainerType = {
         fight: [
             {
                 level: [67, 68],
-                title: '',
+                title: '드래곤타입 챔피언',
                 pokemon: [
                     {
                         level: 67,
@@ -1742,7 +1742,7 @@ export const Trainers: TrainerType = {
         fight: [
             {
                 level: [61, 62],
-                title: '챔피언',
+                title: '치프 챔피언',
                 pokemon: [
                     {
                         level: 61,
