@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import LogoLayout from '../../../layouts/LogoLayout';
 import Styles from '../../../styles/MainDrawerNavigation/OpponentTrainer/ScrOpponentTrainerMainStyle';
 import { ImageBackground, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { useFocusEffect } from '@react-navigation/native';
 
 type Prop = {
     navigation: DrawerNavigationProp<any, any>
 }
 
 const ScrOpponentTrainerMain = (props: Prop) => {
+
+    useFocusEffect(
+        useCallback(() => {
+          const parent = props.navigation.getParent()
+          parent?.setOptions({ swipeEnabled: true })
+          // It returns to the initial state.
+          return () => parent?.setOptions({ swipeEnabled: false })
+        }, [props.navigation])
+      )
+
     return (
         <LogoLayout navigation={props.navigation}>
             <View style={Styles.MainView}>

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { DrawerNavigationProp } from '@react-navigation/drawer/lib/typescript/src/types';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import Styles from '../../../styles/MainDrawerNavigation/PokemonList/ScrPokemonListMainStyle';
 import { Alert, TextInput, TouchableOpacity, View } from 'react-native';
@@ -17,7 +17,7 @@ import * as Hangul from 'hangul-js';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useIsFocused } from '@react-navigation/core';
-import { NavigationProp } from '@react-navigation/native';
+import { NavigationProp, useFocusEffect } from '@react-navigation/native';
 import { PokemonListSetting } from '../../../states/PokemonList/PokemonListSetting';
 
 
@@ -51,6 +51,15 @@ const ScrPokemonListMain = (props: Prop) => {
             getFile();
         }
     }, [isFocused]);
+
+    useFocusEffect(
+        useCallback(() => {
+          const parent = props.navigation.getParent()
+          parent?.setOptions({ swipeEnabled: true })
+          // It returns to the initial state.
+          return () => parent?.setOptions({ swipeEnabled: false })
+        }, [props.navigation])
+      )
 
     const [textBox, setTextBox] = useState<string>('');
 
