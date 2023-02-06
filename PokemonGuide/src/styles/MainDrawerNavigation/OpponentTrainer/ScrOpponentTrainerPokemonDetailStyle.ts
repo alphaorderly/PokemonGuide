@@ -40,6 +40,24 @@ export default StyleSheet.create({
         fontSize: 20,
         fontFamily: 'NanumSquareNeoTTF-cBd',
     },
+    TerastalView: {
+        padding: 10,
+    },
+    TerastalTitleView: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        paddingBottom: 10,
+    },
+    TerastalTitleText: {
+        textAlign: 'center',
+        fontSize: 24,
+        fontFamily: 'DNFBitBitTTF',
+    },
+    TerastalTitleImage: {
+        height: 32,
+        resizeMode: 'contain'
+    },
     WholeSkillView: {
         marginTop: 10,
     },

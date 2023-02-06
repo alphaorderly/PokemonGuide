@@ -81,6 +81,20 @@ const ScrOpponentTrainerPokemonDetail = (props: Prop) => {
                     attacked={true}
                     types={pokemonData.type}
                 />
+                {   
+                    pokemon.terastal === undefined ||
+                    <View style={Styles.TerastalView}>
+                        <View style={Styles.TerastalTitleView}>
+                            <Text style={Styles.TerastalTitleText}>테라스탈</Text>
+                            <Image source={PokemonTypes[pokemon.terastal].icon} style={Styles.TerastalTitleImage}/>
+                            <Text style={Styles.TerastalTitleText}>{PokemonTypes[pokemon.terastal].label}</Text>
+                        </View>
+                        <CounterAnswer
+                            attacked={true}
+                            types={[pokemon.terastal]}
+                        />
+                    </View>
+                }
                 <View style={Styles.WholeSkillView}>
                     {
                         pokemon.skill.map(
