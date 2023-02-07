@@ -1,9 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { DrawerNavigationProp } from '@react-navigation/drawer/lib/typescript/src/types';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import Styles from '../../../styles/MainDrawerNavigation/PokemonList/ScrPokemonListMainStyle';
-import { Alert, TextInput, TouchableOpacity, View } from 'react-native';
+import { TextInput, TouchableOpacity, View } from 'react-native';
 import LogoLayout from '../../../layouts/LogoLayout';
 
 import pokemonList, { Pokemon } from '../../../states/PokemonList/PokemonList';
@@ -17,8 +16,10 @@ import * as Hangul from 'hangul-js';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useIsFocused } from '@react-navigation/core';
-import { NavigationProp } from '@react-navigation/native';
+import { NavigationProp, useFocusEffect } from '@react-navigation/native';
 import { PokemonListSetting } from '../../../states/PokemonList/PokemonListSetting';
+import { Shadow } from 'react-native-shadow-2';
+import PokemonList from '../../../states/PokemonList/PokemonList';
 
 
 type Prop = {
@@ -30,7 +31,7 @@ const ScrPokemonListMain = (props: Prop) => {
 
     const isFocused = useIsFocused();
 
-    const [list, setList] = useRecoilState<Pokemon[]>(pokemonList);
+    const [list, setList] = useRecoilState<Pokemon[]>(PokemonList);
 
     const pokemonListSetting = useRecoilValue(PokemonListSetting);
 
@@ -58,10 +59,20 @@ const ScrPokemonListMain = (props: Prop) => {
         return <PokemonButton navigation={props.navigation} item={item} setPokemon={setList} setFile={setFile}/>;
     };
 
+    useFocusEffect(
+        useCallback(() => {
+          const parent = props.navigation.getParent()
+          parent?.setOptions({ swipeEnabled: true })
+          // It returns to the initial state.
+          return () => parent?.setOptions({ swipeEnabled: false })
+        }, [props.navigation])
+      )
+
     return (
         <LogoLayout navigation={props.navigation}>
             <View style={Styles.MainView}>
                 <View style={Styles.SearchView}>
+                    <Shadow style={Styles.SearchShadow} containerStyle={Styles.SearchContainerShadow} distance={3} startColor='#00000022'>
                     <TextInput
                         style={Styles.SearchBar}
                         placeholder="이름을 입력하세요"
@@ -69,17 +80,20 @@ const ScrPokemonListMain = (props: Prop) => {
                         value={textBox}
                         onChangeText={setTextBox}
                     />
+                    </Shadow>
                     <TouchableOpacity style={Styles.SettingButton} onPress={() => {props.navigation.navigate('Setting');}}>
                         <MaterialIcon name="settings" size={30} />
                     </TouchableOpacity>
                 </View>
                 <FlatList
-                    data={list.filter(item => {
-                        if (pokemonListSetting.notCaught && item.catch) {return false;}
-                        if (pokemonListSetting.notSeen && item.seen) {return false;}
-                        if (textBox.length === 0) {return true;}
-                        return Hangul.search(item.name, textBox) >= 0 || String(item.number).startsWith(textBox);
-                    })}
+                    data={
+                        list.filter(
+                        item => {
+                            if (pokemonListSetting.notCaught && item.catch) {return false;}
+                            if (pokemonListSetting.notSeen && item.seen) {return false;}
+                            if (textBox.length === 0) {return true;}
+                            return Hangul.search(item.name, textBox) >= 0 || String(item.number).startsWith(textBox);
+                        })}
                     renderItem={listItem}
                 />
             </View>

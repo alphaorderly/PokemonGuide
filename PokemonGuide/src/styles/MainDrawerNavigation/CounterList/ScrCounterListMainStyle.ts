@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 import { Colors } from '../../../themes/colors';
+import { Shadow } from '../../../themes/shadows';
 
 export default StyleSheet.create({
   TitleText: {
@@ -30,6 +31,11 @@ export default StyleSheet.create({
     paddingBottom: 20,
     color: '#002030'
   },
+  Placeholder: {
+    fontSize: 18,
+    fontFamily: 'NanumSquareNeoTTF-cBd',
+    textAlign: 'center'
+  },
   Dropdown: {
     borderTopWidth: 0,
     borderLeftWidth: 0,
@@ -53,18 +59,30 @@ export default StyleSheet.create({
   },
   ModalTitle: {
     fontFamily: 'DNFBitBitTTF',
-    fontSize: 20 
+    fontSize: 18,
   },
   BadgeText: {
     fontFamily: 'NanumSquareNeoTTF-bRg',
     fontSize: 16
   },
   ListContainer: {
-    flexDirection: 'row',
+    width: '45%',
+    margin: '2.5%',
+    backgroundColor: Colors.LogoBackground,
+    borderRadius: 10,
   },
   ListLabel: {
     fontSize: 18,
     fontFamily: 'NanumSquareNeoTTF-bRg',
-    padding: 5,
+    textAlign: 'center',
+  },
+  SelectedListContainer: {
+    backgroundColor: 'gray',
+  },
+  SelectedListLabel: {
+
+  },
+  WholeList: {
+    flexDirection: 'column',
   }
 });

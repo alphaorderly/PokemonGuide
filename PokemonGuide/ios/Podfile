@@ -6,6 +6,8 @@ install! 'cocoapods', :deterministic_uuids => false
 
 target 'PokemonGuide' do
   config = use_native_modules!
+  pod 'React-Core', :path => '../node_modules/react-native/'
+  pod 'React-CoreModules', :path => '../node_modules/react-native/React/CoreModules'
 
   # Flags change depending on the env values.
   flags = get_default_flags()

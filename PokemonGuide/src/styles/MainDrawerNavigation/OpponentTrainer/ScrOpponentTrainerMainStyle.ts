@@ -1,15 +1,19 @@
 import { StyleSheet } from "react-native";
-import { Shadow } from "../../../themes/shadows";
-import { Colors } from "../../../themes/colors";
 
 export default StyleSheet.create({
     MainView: {
         marginTop: 10,
     },
-    LargeButtonBackground: {
-        height: 150,
+    Shadow: {
+        borderRadius: 15,
+        width: '100%'
+    },
+    ShadowContainer: {
         marginVertical: 10,
         marginHorizontal: 20,
+    },
+    LargeButtonBackground: {
+        height: 150,
     },
     LargeButtonBackgroundImage: {
         borderRadius: 15,
@@ -21,7 +25,6 @@ export default StyleSheet.create({
         alignItems: 'flex-start',
         justifyContent: 'space-evenly',
         backgroundColor: '#FFFFFF99',
-        ...Shadow,
     },
     MainText: {
         fontFamily: 'NanumSquareNeoTTF-eHv',

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Animated, Image, Text, View } from 'react-native';
+import { Animated, Image, Text, TouchableOpacity, View } from 'react-native';
 
 import Styles from '../../../styles/MainDrawerNavigation/OpponentTrainer/ScrOpponentTrainerPokemonDetailStyle';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -10,6 +10,7 @@ import { useRecoilValue } from 'recoil';
 import CounterAnswer from '../../../components/MainDrawerNavigation/CounterList/CounterAnswer';
 
 import Material from 'react-native-vector-icons/MaterialCommunityIcons';
+import { PokemonModes, PokemonTypes } from '../../../consts/TypeCounter';
 
 type Prop = {
     navigation: StackNavigationProp<any, any>,
@@ -66,7 +67,7 @@ const ScrOpponentTrainerPokemonDetail = (props: Prop) => {
 
     return (
         <View style={Styles.MainView}>
-            <Animated.View style={{...Styles.InnerView, transform: [{translateY: animation}]}} onTouchStart={() => {}}>
+            <Animated.ScrollView style={{...Styles.InnerView, transform: [{translateY: animation}]}} onTouchStart={() => {}}>
                 <View style={Styles.PokemonTitleView}>
                     <View style={Styles.PokemonTitleLeftView}>
                         <Image style={Styles.PokemonTitleImage} source={imagePwd[pokemon.number - 1]} />
@@ -80,7 +81,39 @@ const ScrOpponentTrainerPokemonDetail = (props: Prop) => {
                     attacked={true}
                     types={pokemonData.type}
                 />
-            </Animated.View>
+                {   
+                    pokemon.terastal === undefined ||
+                    <View style={Styles.TerastalView}>
+                        <View style={Styles.TerastalTitleView}>
+                            <Text style={Styles.TerastalTitleText}>테라스탈</Text>
+                            <Image source={PokemonTypes[pokemon.terastal].icon} style={Styles.TerastalTitleImage}/>
+                            <Text style={Styles.TerastalTitleText}>{PokemonTypes[pokemon.terastal].label}</Text>
+                        </View>
+                        <CounterAnswer
+                            attacked={true}
+                            types={[pokemon.terastal]}
+                        />
+                    </View>
+                }
+                <View style={Styles.WholeSkillView}>
+                    {
+                        pokemon.skill.map(
+                            (skill) => {
+                                return (
+                                    <TouchableOpacity key={skill.name} style={Styles.SkillView} onPress={() => {props.navigation.navigate('PokemonSkillWebview', {skill: skill})}}>
+                                        <Text style={Styles.SkillText}>{skill.name}</Text>
+                                        <View style={Styles.SkillTypeView}>
+                                            <Image style={Styles.SkillTypeIcon} source={PokemonTypes[skill.type].icon} />
+                                            <Text style={Styles.SkillTypeText}>{PokemonTypes[skill.type].label}</Text>
+                                            <Text style={Styles.SkillTypeText}>{PokemonModes[skill.mode].name}</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                )
+                            }
+                        )
+                    }
+                </View>
+            </Animated.ScrollView>
         </View>
     );
 };

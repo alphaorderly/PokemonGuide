@@ -14,7 +14,6 @@ export default StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        ...Shadow
     },
     JobText: {
         fontSize: 35,

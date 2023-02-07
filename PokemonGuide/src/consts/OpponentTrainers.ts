@@ -13,13 +13,14 @@ export type FightPokemonType = {
     number: number,
     level: number,
     skill: Skill[],
-    sex: Sex
+    sex: Sex,
+    terastal?: PokemonType
 }
 
 export type FightType = {
     level: [number, number],
     title: string
-    pokemon: FightPokemonType[]
+    pokemon: FightPokemonType[],
 }
 
 export type TrainerType = {
@@ -69,6 +70,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['마구할퀴기'],
                         ],
                         sex: Sex.Female,
+                        terastal: PokemonType.벌레,
                     },
                 ],
             },
@@ -130,6 +132,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['깨물어부수기'],
                         ],
                         sex: Sex.Female,
+                        terastal: PokemonType.벌레,
                     },
                 ],
             },
@@ -171,6 +174,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['돌떨구기'],
                         ],
                         sex: Sex.Male,
+                        terastal: PokemonType.풀
                     },
                 ],
             },
@@ -232,6 +236,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['냉동펀치'],
                         ],
                         sex: Sex.Male,
+                        terastal: PokemonType.풀,
                     },
                 ],
             },
@@ -284,6 +289,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['이상한빛'],
                         ],
                         sex: Sex.Female,
+                        terastal: PokemonType.전기
                     },
                 ],
             }
@@ -346,6 +352,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['매지컬샤인'],
                         ],
                         sex: Sex.Female,
+                        terastal: PokemonType.전기,
                     },
                 ],
             },
@@ -390,6 +397,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['힘껏치기'],
                         ],
                         sex: Sex.Male,
+                        terastal: PokemonType.물
                     },
                 ],
             },
@@ -451,6 +459,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['인파이트'],
                         ],
                         sex: Sex.Male,
+                        terastal: PokemonType.물,
                     },
                 ],
             },
@@ -494,6 +503,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['제비반환'],
                         ],
                         sex: Sex.Male,
+                        terastal: PokemonType.노말,
                     },
                 ],
             },
@@ -555,6 +565,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['도둑질'],
                         ],
                         sex: Sex.Male,
+                        terastal: PokemonType.노말,
                     },
                 ],
             },
@@ -609,6 +620,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['하이퍼보이스'],
                         ],
                         sex: Sex.Male,
+                        terastal: PokemonType.고스트,
                     },
                 ],
             },
@@ -670,6 +682,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['오물폭탄'],
                         ],
                         sex: Sex.Male,
+                        terastal: PokemonType.고스트,
                     },
                 ],
             },
@@ -724,6 +737,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['꽃보라'],
                         ],
                         sex: Sex.Female,
+                        terastal: PokemonType.에스퍼,
                     },
                 ],
             },
@@ -785,6 +799,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['애교부리기'],
                         ],
                         sex: Sex.Female,
+                        terastal: PokemonType.에스퍼,
                     },
                 ],
             },
@@ -840,6 +855,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['폭풍'],
                         ],
                         sex: Sex.Female,
+                        terastal: PokemonType.얼음,
                     },
                 ],
             },
@@ -899,6 +915,7 @@ export const Trainers: TrainerType = {
 							PokemonSkill['폭풍'],
                         ],
                         sex: Sex.Female,
+                        terastal: PokemonType.얼음,
                     },
                 ],
             },
@@ -1465,7 +1482,7 @@ export const Trainers: TrainerType = {
         fight: [
             {
                 level: [57, 58],
-                title: '',
+                title: '땅타입 챔피언',
                 pokemon: [
                     {
                         level: 57,
@@ -1521,6 +1538,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['방어'],
                         ],
                         sex: Sex.Male,
+                        terastal: PokemonType.땅,
                     },
                 ],
             },
@@ -1535,7 +1553,7 @@ export const Trainers: TrainerType = {
         fight: [
             {
                 level: [57, 59],
-                title: '',
+                title: '강철타입 챔피언',
                 pokemon: [
                     {
                         level: 58,
@@ -1591,6 +1609,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['스톤에지'],
                         ],
                         sex: Sex.Female,
+                        terastal: PokemonType.강철,
                     },
                 ],
             },
@@ -1604,7 +1623,7 @@ export const Trainers: TrainerType = {
         fight: [
             {
                 level: [59, 60],
-                title: '',
+                title: '비행타입 챔피언',
                 pokemon: [
                     {
                         level: 59,
@@ -1660,6 +1679,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['아쿠아브레이크'],
                         ],
                         sex: Sex.Male,
+                        terastal: PokemonType.비행,
                     },
                 ],
             },
@@ -1673,7 +1693,7 @@ export const Trainers: TrainerType = {
         fight: [
             {
                 level: [67, 68],
-                title: '',
+                title: '드래곤타입 챔피언',
                 pokemon: [
                     {
                         level: 67,
@@ -1729,6 +1749,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['얼음뭉치'],
                         ],
                         sex: Sex.Male,
+                        terastal: PokemonType.드래곤,
                     },
                 ],
             },
@@ -1742,7 +1763,7 @@ export const Trainers: TrainerType = {
         fight: [
             {
                 level: [61, 62],
-                title: '챔피언',
+                title: '치프 챔피언',
                 pokemon: [
                     {
                         level: 61,
@@ -1809,6 +1830,7 @@ export const Trainers: TrainerType = {
                             PokemonSkill['매지컬샤인'],
                         ],
                         sex: Sex.Male,
+                        terastal: PokemonType.바위,
                     },
                 ],
             },
