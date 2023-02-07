@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { Shadow } from "../../../themes/shadows";
 import { Colors } from "../../../themes/colors";
 export default StyleSheet.create({
     MainView: {

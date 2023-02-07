@@ -7,6 +7,7 @@ import CustomDrawer from '../../components/MainDrawerNavigation/Drawer';
 import Styles from '../../styles/MainDrawerNavigation/MainDrawerNavigationStyle';
 import PokemonListStackNavigation from './PokemonList/PokemonListStackNavigation';
 import OpponentTrainerStackNavigation from './OpponentTrainer/OpponentTrainerStackNavigation';
+import GuidanceStackNavigation from './Guidance/GuidanceStackNavigation';
 
 const Drawer = createDrawerNavigator();
 
@@ -39,6 +40,11 @@ const MainDrawerNavigation = () => {
         name="OpponentTrainer"
         component={OpponentTrainerStackNavigation}
         options={{title: '주요 상대'}}
+      />
+      <Drawer.Screen
+        name="Guidance"
+        component={GuidanceStackNavigation}
+        options={{title: '공략'}}
       />
     </Drawer.Navigator>
   );
