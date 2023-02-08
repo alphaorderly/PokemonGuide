@@ -67,6 +67,17 @@ const ScrOpponentTrainerPokemonDetail = (props: Prop) => {
 
     return (
         <View style={Styles.MainView}>
+            <TouchableOpacity
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'transparent'
+                }}
+                onPress={() => props.navigation.pop()}
+            />
             <Animated.ScrollView style={{...Styles.InnerView, transform: [{translateY: animation}]}} onTouchStart={() => {}}>
                 <View style={Styles.PokemonTitleView}>
                     <View style={Styles.PokemonTitleLeftView}>

@@ -5,7 +5,7 @@ import { Shadow } from "../../../themes/shadows";
 export default StyleSheet.create({
     MainView: {
         flex: 1,
-        zIndex:-100,
+        backgroundColor: '#00000055',
     },
     InnerView: {
         marginVertical: 200,

@@ -25,12 +25,6 @@ const CustomDrawer = props => {
         >
             <DrawerItemList {...props} />
         </DrawerContentScrollView>
-        <View style={Styles.FixedBottomView}>
-          <TouchableOpacity style={Styles.FixedBottomButton}>
-            <Ionicons name="settings" size={24}/>
-            <Text style={Styles.FixedBottomText}>설정</Text>
-          </TouchableOpacity>
-        </View>
     </View>
   );
 };

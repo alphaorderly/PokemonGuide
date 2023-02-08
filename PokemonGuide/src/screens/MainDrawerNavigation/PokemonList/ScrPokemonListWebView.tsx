@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { RouteProp } from '@react-navigation/native';
 import React, { useEffect, useRef } from 'react';
-import { Animated, Text, View } from 'react-native';
+import { Animated, Text, TouchableOpacity, View } from 'react-native';
 
 import Styles from '../../../styles/MainDrawerNavigation/PokemonList/ScrPokemonListWebViewStyle';
 import { Pokemon } from '../../../states/PokemonList/PokemonList';
@@ -36,6 +36,17 @@ const ScrPokemonListWebView = (props: Prop) => {
 
     return (
         <View style={Styles.MainView}>
+            <TouchableOpacity
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'transparent'
+                }}
+                onPress={() => props.navigation.pop()}
+            />
             <Animated.View style={{...Styles.InnerView, transform: [{translateY: animation}]}}>
                 <View style={Styles.TopView}>
                     <Text style={Styles.TopText}>{pokemon.name} 상세정보</Text>

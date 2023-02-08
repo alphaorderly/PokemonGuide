@@ -7,6 +7,7 @@ import PokemonList from '../../../states/PokemonList/PokemonList';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Styles from '../../../styles/MainDrawerNavigation/PokemonList/ScrPokemonListSettingStyle';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 type Prop = {
     navigation: StackNavigationProp<any, any>;
@@ -44,6 +45,17 @@ const ScrPokemonListSetting = (props: Prop) => {
 
     return (
         <View style={Styles.MainView}>
+            <TouchableOpacity
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'transparent'
+                }}
+                onPress={() => props.navigation.pop()}
+            />
             <Animated.View style={{...Styles.InnerView, transform: [{translateY: animation}]}}>
                 <View style={Styles.TopView}>
                     <Text style={Styles.TopText}>설정</Text>
@@ -90,7 +102,7 @@ const ScrPokemonListSetting = (props: Prop) => {
                             },
                             {
                                 text: '확인',
-                                onPress: async () => {await setFile();props.navigation.navigate('Main');},
+                                onPress: async () => {await setFile(); props.navigation.navigate('Main');},
                                 style: 'cancel',
                             },
                         ]);

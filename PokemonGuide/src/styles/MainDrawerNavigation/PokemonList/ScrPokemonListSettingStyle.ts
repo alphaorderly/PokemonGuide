@@ -4,6 +4,7 @@ import { Colors } from "../../../themes/colors";
 export default StyleSheet.create({
     MainView: {
         flex: 1,
+        backgroundColor: '#00000055'
     },
     InnerView: {
         marginVertical: 200,
